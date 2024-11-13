@@ -325,23 +325,29 @@ namespace EducationalPractice
 
             if (selectedService != null)
             {
-                // Adjust total cost based on the NewValue
-                decimal currentTotalCost = decimal.Parse(costValue.Text);
+                // Получаем текущую стоимость
+                decimal currentTotalCost = 0;
+                if (decimal.TryParse(costValue.Text.Replace(" руб.", ""), out decimal parsedCost))
+                {
+                    currentTotalCost = parsedCost;
+                }
 
+                // Корректируем общую стоимость в зависимости от состояния NewValue
                 if (e.NewValue == CheckState.Checked)
                 {
-                    // If the item is being checked, add its cost
+                    // Если элемент отмечен, добавляем его стоимость
                     currentTotalCost += selectedService.Cost;
                 }
                 else if (e.NewValue == CheckState.Unchecked)
                 {
-                    // If the item is being unchecked, subtract its cost
+                    // Если элемент снимается, вычитаем его стоимость
                     currentTotalCost -= selectedService.Cost;
                 }
 
-                // Update the cost display
-                costValue.Text = currentTotalCost.ToString();
+                // Обновляем отображение стоимости, добавляя " руб."
+                costValue.Text = $"{currentTotalCost} руб.";
             }
         }
     }
 }
+

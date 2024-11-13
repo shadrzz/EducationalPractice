@@ -46,42 +46,42 @@
             // idLaboratoryVesselLabel
             // 
             idLaboratoryVesselLabel.AutoSize = true;
-            idLaboratoryVesselLabel.Location = new Point(40, 40);
+            idLaboratoryVesselLabel.Location = new Point(12, 25);
             idLaboratoryVesselLabel.Name = "idLaboratoryVesselLabel";
-            idLaboratoryVesselLabel.Size = new Size(155, 15);
+            idLaboratoryVesselLabel.Size = new Size(158, 15);
             idLaboratoryVesselLabel.TabIndex = 0;
-            idLaboratoryVesselLabel.Text = "Код лабораторного сосуда";
+            idLaboratoryVesselLabel.Text = "Код лабораторного сосуда:";
             // 
             // customerChoiceLabel
             // 
             customerChoiceLabel.AutoSize = true;
-            customerChoiceLabel.Location = new Point(40, 100);
+            customerChoiceLabel.Location = new Point(12, 75);
             customerChoiceLabel.Name = "customerChoiceLabel";
-            customerChoiceLabel.Size = new Size(101, 15);
+            customerChoiceLabel.Size = new Size(104, 15);
             customerChoiceLabel.TabIndex = 1;
-            customerChoiceLabel.Text = "Выбор заказчика";
+            customerChoiceLabel.Text = "Выбор заказчика:";
             // 
             // idLaboratoryVesselTextBox
             // 
-            idLaboratoryVesselTextBox.Location = new Point(250, 40);
+            idLaboratoryVesselTextBox.Location = new Point(12, 43);
             idLaboratoryVesselTextBox.Name = "idLaboratoryVesselTextBox";
-            idLaboratoryVesselTextBox.Size = new Size(120, 23);
+            idLaboratoryVesselTextBox.Size = new Size(174, 23);
             idLaboratoryVesselTextBox.TabIndex = 2;
             // 
             // customerChoiceComboBox
             // 
             customerChoiceComboBox.FormattingEnabled = true;
-            customerChoiceComboBox.Location = new Point(250, 100);
+            customerChoiceComboBox.Location = new Point(12, 93);
             customerChoiceComboBox.Name = "customerChoiceComboBox";
-            customerChoiceComboBox.Size = new Size(120, 23);
+            customerChoiceComboBox.Size = new Size(174, 23);
             customerChoiceComboBox.TabIndex = 3;
             customerChoiceComboBox.SelectedIndexChanged += customerChoiceComboBox_SelectedIndexChanged;
             // 
             // placeOrderButton
             // 
-            placeOrderButton.Location = new Point(599, 40);
+            placeOrderButton.Location = new Point(12, 151);
             placeOrderButton.Name = "placeOrderButton";
-            placeOrderButton.Size = new Size(150, 50);
+            placeOrderButton.Size = new Size(174, 72);
             placeOrderButton.TabIndex = 5;
             placeOrderButton.Text = "Оформить заказ";
             placeOrderButton.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             // 
             // fullNameTextBox
             // 
-            fullNameTextBox.Location = new Point(250, 162);
+            fullNameTextBox.Location = new Point(239, 43);
             fullNameTextBox.Name = "fullNameTextBox";
-            fullNameTextBox.Size = new Size(293, 23);
+            fullNameTextBox.Size = new Size(308, 23);
             fullNameTextBox.TabIndex = 7;
             fullNameTextBox.Visible = false;
             fullNameTextBox.TextChanged += fullNameTextBox_TextChanged;
@@ -99,47 +99,49 @@
             // fullNameLabel
             // 
             fullNameLabel.AutoSize = true;
-            fullNameLabel.Location = new Point(40, 162);
+            fullNameLabel.Location = new Point(238, 25);
             fullNameLabel.Name = "fullNameLabel";
-            fullNameLabel.Size = new Size(34, 15);
+            fullNameLabel.Size = new Size(37, 15);
             fullNameLabel.TabIndex = 6;
-            fullNameLabel.Text = "ФИО";
+            fullNameLabel.Text = "ФИО:";
             fullNameLabel.Visible = false;
             // 
             // companyNameTextBox
             // 
-            companyNameTextBox.Location = new Point(250, 195);
+            companyNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            companyNameTextBox.Location = new Point(239, 43);
             companyNameTextBox.Name = "companyNameTextBox";
-            companyNameTextBox.Size = new Size(293, 23);
+            companyNameTextBox.Size = new Size(308, 23);
             companyNameTextBox.TabIndex = 9;
             companyNameTextBox.Visible = false;
             // 
             // companyNameLabel
             // 
             companyNameLabel.AutoSize = true;
-            companyNameLabel.Location = new Point(40, 195);
+            companyNameLabel.Location = new Point(239, 25);
             companyNameLabel.Name = "companyNameLabel";
-            companyNameLabel.Size = new Size(118, 15);
+            companyNameLabel.Size = new Size(121, 15);
             companyNameLabel.TabIndex = 8;
-            companyNameLabel.Text = "Название компании";
+            companyNameLabel.Text = "Название компании:";
             companyNameLabel.Visible = false;
             // 
             // servicesLabel
             // 
             servicesLabel.AutoSize = true;
-            servicesLabel.Location = new Point(40, 233);
+            servicesLabel.Location = new Point(239, 75);
             servicesLabel.Name = "servicesLabel";
-            servicesLabel.Size = new Size(45, 15);
+            servicesLabel.Size = new Size(48, 15);
             servicesLabel.TabIndex = 10;
-            servicesLabel.Text = "Услуги";
+            servicesLabel.Text = "Услуги:";
             servicesLabel.Visible = false;
             // 
             // servicesCheckedListBox
             // 
+            servicesCheckedListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             servicesCheckedListBox.FormattingEnabled = true;
-            servicesCheckedListBox.Location = new Point(250, 233);
+            servicesCheckedListBox.Location = new Point(239, 93);
             servicesCheckedListBox.Name = "servicesCheckedListBox";
-            servicesCheckedListBox.Size = new Size(293, 112);
+            servicesCheckedListBox.Size = new Size(308, 112);
             servicesCheckedListBox.TabIndex = 12;
             servicesCheckedListBox.Visible = false;
             servicesCheckedListBox.ItemCheck += servicesCheckedListBox_ItemCheck;
@@ -147,7 +149,7 @@
             // costLabel
             // 
             costLabel.AutoSize = true;
-            costLabel.Location = new Point(598, 108);
+            costLabel.Location = new Point(238, 208);
             costLabel.Name = "costLabel";
             costLabel.Size = new Size(70, 15);
             costLabel.TabIndex = 13;
@@ -157,18 +159,18 @@
             // costValue
             // 
             costValue.AutoSize = true;
-            costValue.Location = new Point(665, 108);
+            costValue.Location = new Point(314, 208);
             costValue.Name = "costValue";
-            costValue.Size = new Size(13, 15);
+            costValue.Size = new Size(39, 15);
             costValue.TabIndex = 14;
-            costValue.Text = "0";
+            costValue.Text = "0 руб.";
             costValue.Visible = false;
             // 
-            // OrderFormation
+            // OrderForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(771, 412);
+            ClientSize = new Size(559, 261);
             Controls.Add(costValue);
             Controls.Add(costLabel);
             Controls.Add(servicesCheckedListBox);
@@ -182,8 +184,10 @@
             Controls.Add(idLaboratoryVesselTextBox);
             Controls.Add(customerChoiceLabel);
             Controls.Add(idLaboratoryVesselLabel);
-            Name = "OrderFormation";
-            Text = "OrderFormation";
+            Location = new Point(12, 50);
+            MinimumSize = new Size(575, 300);
+            Name = "OrderForm";
+            Text = "Формирование заказа";
             Load += OrderFormation_Load;
             ResumeLayout(false);
             PerformLayout();

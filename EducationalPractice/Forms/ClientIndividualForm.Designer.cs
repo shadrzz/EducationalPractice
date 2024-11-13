@@ -41,14 +41,16 @@
             emailLabel = new Label();
             addressLabel = new Label();
             addressTextBox = new TextBox();
+            passwordLabel = new Label();
+            passwordTextBox = new TextBox();
             SuspendLayout();
             // 
             // saveButton
             // 
             saveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            saveButton.Location = new Point(12, 476);
+            saveButton.Location = new Point(12, 349);
             saveButton.Name = "saveButton";
-            saveButton.Size = new Size(641, 50);
+            saveButton.Size = new Size(460, 50);
             saveButton.TabIndex = 0;
             saveButton.Text = "Сохранить";
             saveButton.UseVisualStyleBackColor = true;
@@ -56,17 +58,16 @@
             // 
             // emailTextBox
             // 
-            emailTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            emailTextBox.Location = new Point(12, 133);
+            emailTextBox.Location = new Point(12, 109);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(288, 23);
+            emailTextBox.Size = new Size(200, 23);
             emailTextBox.TabIndex = 1;
             // 
             // dateOfBirthLabel
             // 
             dateOfBirthLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dateOfBirthLabel.AutoSize = true;
-            dateOfBirthLabel.Location = new Point(12, 171);
+            dateOfBirthLabel.Location = new Point(12, 144);
             dateOfBirthLabel.Name = "dateOfBirthLabel";
             dateOfBirthLabel.Size = new Size(93, 15);
             dateOfBirthLabel.TabIndex = 6;
@@ -74,17 +75,16 @@
             // 
             // dateOfBirthTextBox
             // 
-            dateOfBirthTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateOfBirthTextBox.Location = new Point(12, 198);
+            dateOfBirthTextBox.Location = new Point(12, 162);
             dateOfBirthTextBox.Name = "dateOfBirthTextBox";
-            dateOfBirthTextBox.Size = new Size(288, 23);
+            dateOfBirthTextBox.Size = new Size(200, 23);
             dateOfBirthTextBox.TabIndex = 5;
             // 
             // passportDataLabel
             // 
             passportDataLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             passportDataLabel.AutoSize = true;
-            passportDataLabel.Location = new Point(12, 309);
+            passportDataLabel.Location = new Point(235, 40);
             passportDataLabel.Name = "passportDataLabel";
             passportDataLabel.Size = new Size(147, 15);
             passportDataLabel.TabIndex = 8;
@@ -92,17 +92,16 @@
             // 
             // passportDataTextBox
             // 
-            passportDataTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            passportDataTextBox.Location = new Point(12, 336);
+            passportDataTextBox.Location = new Point(235, 58);
             passportDataTextBox.Name = "passportDataTextBox";
-            passportDataTextBox.Size = new Size(288, 23);
+            passportDataTextBox.Size = new Size(225, 23);
             passportDataTextBox.TabIndex = 7;
             // 
             // phoneNumberLabel
             // 
             phoneNumberLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             phoneNumberLabel.AutoSize = true;
-            phoneNumberLabel.Location = new Point(12, 383);
+            phoneNumberLabel.Location = new Point(235, 91);
             phoneNumberLabel.Name = "phoneNumberLabel";
             phoneNumberLabel.Size = new Size(104, 15);
             phoneNumberLabel.TabIndex = 10;
@@ -110,17 +109,16 @@
             // 
             // phoneNumberTextBox
             // 
-            phoneNumberTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            phoneNumberTextBox.Location = new Point(12, 410);
+            phoneNumberTextBox.Location = new Point(235, 109);
             phoneNumberTextBox.Name = "phoneNumberTextBox";
-            phoneNumberTextBox.Size = new Size(288, 23);
+            phoneNumberTextBox.Size = new Size(225, 23);
             phoneNumberTextBox.TabIndex = 9;
             // 
             // fullNameLabel
             // 
             fullNameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             fullNameLabel.AutoSize = true;
-            fullNameLabel.Location = new Point(12, 37);
+            fullNameLabel.Location = new Point(12, 40);
             fullNameLabel.Name = "fullNameLabel";
             fullNameLabel.Size = new Size(37, 15);
             fullNameLabel.TabIndex = 4;
@@ -128,17 +126,16 @@
             // 
             // fullNameTextBox
             // 
-            fullNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            fullNameTextBox.Location = new Point(12, 64);
+            fullNameTextBox.Location = new Point(12, 58);
             fullNameTextBox.Name = "fullNameTextBox";
-            fullNameTextBox.Size = new Size(288, 23);
+            fullNameTextBox.Size = new Size(200, 23);
             fullNameTextBox.TabIndex = 3;
             // 
             // emailLabel
             // 
             emailLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             emailLabel.AutoSize = true;
-            emailLabel.Location = new Point(12, 106);
+            emailLabel.Location = new Point(12, 91);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new Size(116, 15);
             emailLabel.TabIndex = 2;
@@ -148,7 +145,7 @@
             // 
             addressLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             addressLabel.AutoSize = true;
-            addressLabel.Location = new Point(12, 238);
+            addressLabel.Location = new Point(12, 195);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new Size(43, 15);
             addressLabel.TabIndex = 12;
@@ -156,17 +153,35 @@
             // 
             // addressTextBox
             // 
-            addressTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            addressTextBox.Location = new Point(12, 265);
+            addressTextBox.Location = new Point(12, 213);
             addressTextBox.Name = "addressTextBox";
-            addressTextBox.Size = new Size(288, 23);
+            addressTextBox.Size = new Size(200, 23);
             addressTextBox.TabIndex = 11;
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new Point(235, 144);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(52, 15);
+            passwordLabel.TabIndex = 14;
+            passwordLabel.Text = "Пароль:";
+            // 
+            // passwordTextBox
+            // 
+            passwordTextBox.Location = new Point(235, 162);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(225, 23);
+            passwordTextBox.TabIndex = 13;
             // 
             // ClientIndividualForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(665, 538);
+            ClientSize = new Size(484, 411);
+            Controls.Add(passwordLabel);
+            Controls.Add(passwordTextBox);
             Controls.Add(addressLabel);
             Controls.Add(addressTextBox);
             Controls.Add(phoneNumberLabel);
@@ -175,11 +190,12 @@
             Controls.Add(passportDataTextBox);
             Controls.Add(dateOfBirthLabel);
             Controls.Add(dateOfBirthTextBox);
-            Controls.Add(fullNameLabel);
             Controls.Add(fullNameTextBox);
             Controls.Add(emailLabel);
             Controls.Add(emailTextBox);
             Controls.Add(saveButton);
+            Controls.Add(fullNameLabel);
+            MinimumSize = new Size(500, 450);
             Name = "ClientIndividualForm";
             Text = "Добавление нового клиента";
             ResumeLayout(false);
@@ -201,5 +217,7 @@
         private Label emailLabel;
         private Label addressLabel;
         private TextBox addressTextBox;
+        private Label passwordLabel;
+        private TextBox passwordTextBox;
     }
 }

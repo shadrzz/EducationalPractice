@@ -1,6 +1,6 @@
 ﻿namespace EducationalPractice.Forms
 {
-    partial class ClientCorporateForm
+    partial class ClientCorporateFormSand
     {
         /// <summary>
         /// Required designer variable.
@@ -50,6 +50,9 @@
             passwordLabel = new Label();
             passwordTextBox = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // companyNameLabel
@@ -79,6 +82,7 @@
             saveButton.TabIndex = 5;
             saveButton.Text = "Сохранить";
             saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
             // 
             // addressLabel
             // 
@@ -243,17 +247,39 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(textBox1, 0, 1);
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Location = new Point(12, 299);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(200, 100);
+            tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
+            tableLayoutPanel1.Size = new Size(423, 100);
             tableLayoutPanel1.TabIndex = 24;
             // 
-            // ClientCorporateForm
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.Location = new Point(3, 18);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(195, 23);
+            textBox1.TabIndex = 25;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(195, 15);
+            label1.TabIndex = 25;
+            label1.Text = "Название компании:";
+            // 
+            // ClientCorporateFormSand
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -281,8 +307,10 @@
             Controls.Add(companyNameLabel);
             Controls.Add(companyNameTextBox);
             MinimumSize = new Size(500, 450);
-            Name = "ClientCorporateForm";
+            Name = "ClientCorporateFormSand";
             Text = "Добавление нового клиента";
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -311,5 +339,7 @@
         private Label passwordLabel;
         private TextBox passwordTextBox;
         private TableLayoutPanel tableLayoutPanel1;
+        private TextBox textBox1;
+        private Label label1;
     }
 }
