@@ -71,7 +71,7 @@
             dateOfBirthTextBox.Location = new Point(3, 120);
             dateOfBirthTextBox.Name = "dateOfBirthTextBox";
             dateOfBirthTextBox.Size = new Size(196, 23);
-            dateOfBirthTextBox.TabIndex = 5;
+            dateOfBirthTextBox.TabIndex = 2;
             // 
             // passportDataLabel
             // 
@@ -89,7 +89,7 @@
             passportDataTextBox.Location = new Point(225, 18);
             passportDataTextBox.Name = "passportDataTextBox";
             passportDataTextBox.Size = new Size(196, 23);
-            passportDataTextBox.TabIndex = 7;
+            passportDataTextBox.TabIndex = 4;
             // 
             // phoneNumberLabel
             // 
@@ -107,7 +107,7 @@
             phoneNumberTextBox.Location = new Point(225, 69);
             phoneNumberTextBox.Name = "phoneNumberTextBox";
             phoneNumberTextBox.Size = new Size(196, 23);
-            phoneNumberTextBox.TabIndex = 9;
+            phoneNumberTextBox.TabIndex = 5;
             // 
             // fullNameLabel
             // 
@@ -125,7 +125,7 @@
             fullNameTextBox.Location = new Point(3, 18);
             fullNameTextBox.Name = "fullNameTextBox";
             fullNameTextBox.Size = new Size(196, 23);
-            fullNameTextBox.TabIndex = 3;
+            fullNameTextBox.TabIndex = 0;
             // 
             // emailLabel
             // 
@@ -153,7 +153,7 @@
             addressTextBox.Location = new Point(3, 171);
             addressTextBox.Name = "addressTextBox";
             addressTextBox.Size = new Size(196, 23);
-            addressTextBox.TabIndex = 11;
+            addressTextBox.TabIndex = 3;
             // 
             // passwordLabel
             // 
@@ -171,7 +171,7 @@
             passwordTextBox.Location = new Point(225, 120);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(196, 23);
-            passwordTextBox.TabIndex = 13;
+            passwordTextBox.TabIndex = 6;
             // 
             // tableLayoutPanel1
             // 
@@ -224,7 +224,7 @@
             button1.Location = new Point(3, 279);
             button1.Name = "button1";
             button1.Size = new Size(418, 69);
-            button1.TabIndex = 27;
+            button1.TabIndex = 7;
             button1.Text = "Сохранить";
             button1.UseVisualStyleBackColor = true;
             // 

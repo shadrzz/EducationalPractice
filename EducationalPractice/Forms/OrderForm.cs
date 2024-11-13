@@ -267,6 +267,7 @@ namespace EducationalPractice
                 fullNameLabel.Visible = !isLegalEntity;
                 fullNameTextBox.Visible = !isLegalEntity;
             }
+            placeOrderButton.Visible = true;
             servicesLabel.Visible = true;
             servicesCheckedListBox.Visible = true;
             costLabel.Visible = true;

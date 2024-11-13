@@ -128,7 +128,7 @@
             companyNameTextBox.Location = new Point(3, 18);
             companyNameTextBox.Name = "companyNameTextBox";
             companyNameTextBox.Size = new Size(196, 23);
-            companyNameTextBox.TabIndex = 25;
+            companyNameTextBox.TabIndex = 0;
             // 
             // emailTextBox
             // 
@@ -136,7 +136,7 @@
             emailTextBox.Location = new Point(225, 171);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(196, 23);
-            emailTextBox.TabIndex = 20;
+            emailTextBox.TabIndex = 9;
             // 
             // emailLabel
             // 
@@ -173,7 +173,7 @@
             contactPhoneTextBox.Location = new Point(225, 120);
             contactPhoneTextBox.Name = "contactPhoneTextBox";
             contactPhoneTextBox.Size = new Size(196, 23);
-            contactPhoneTextBox.TabIndex = 18;
+            contactPhoneTextBox.TabIndex = 8;
             // 
             // contactPhoneLabel
             // 
@@ -190,7 +190,7 @@
             addressTextBox.Location = new Point(3, 69);
             addressTextBox.Name = "addressTextBox";
             addressTextBox.Size = new Size(196, 23);
-            addressTextBox.TabIndex = 25;
+            addressTextBox.TabIndex = 2;
             // 
             // innLabel
             // 
@@ -207,7 +207,7 @@
             contactPersonNameTextBox.Location = new Point(225, 69);
             contactPersonNameTextBox.Name = "contactPersonNameTextBox";
             contactPersonNameTextBox.Size = new Size(196, 23);
-            contactPersonNameTextBox.TabIndex = 16;
+            contactPersonNameTextBox.TabIndex = 7;
             // 
             // innLabelTextBox
             // 
@@ -215,7 +215,7 @@
             innLabelTextBox.Location = new Point(3, 120);
             innLabelTextBox.Name = "innLabelTextBox";
             innLabelTextBox.Size = new Size(196, 23);
-            innLabelTextBox.TabIndex = 25;
+            innLabelTextBox.TabIndex = 3;
             // 
             // bikLabel
             // 
@@ -233,7 +233,7 @@
             ceoNameTextBox.Location = new Point(225, 18);
             ceoNameTextBox.Name = "ceoNameTextBox";
             ceoNameTextBox.Size = new Size(196, 23);
-            ceoNameTextBox.TabIndex = 14;
+            ceoNameTextBox.TabIndex = 6;
             // 
             // ceoNameLabel
             // 
@@ -261,7 +261,7 @@
             accountNumberTextBox.Location = new Point(3, 171);
             accountNumberTextBox.Name = "accountNumberTextBox";
             accountNumberTextBox.Size = new Size(196, 23);
-            accountNumberTextBox.TabIndex = 25;
+            accountNumberTextBox.TabIndex = 4;
             // 
             // passwordTextBox
             // 
@@ -269,7 +269,7 @@
             passwordTextBox.Location = new Point(225, 222);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(196, 23);
-            passwordTextBox.TabIndex = 12;
+            passwordTextBox.TabIndex = 10;
             // 
             // bikTextBox
             // 
@@ -277,7 +277,7 @@
             bikTextBox.Location = new Point(3, 222);
             bikTextBox.Name = "bikTextBox";
             bikTextBox.Size = new Size(196, 23);
-            bikTextBox.TabIndex = 22;
+            bikTextBox.TabIndex = 5;
             // 
             // saveButton
             // 
@@ -286,7 +286,7 @@
             saveButton.Location = new Point(3, 279);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(418, 69);
-            saveButton.TabIndex = 27;
+            saveButton.TabIndex = 11;
             saveButton.Text = "Сохранить";
             saveButton.UseVisualStyleBackColor = true;
             // 
