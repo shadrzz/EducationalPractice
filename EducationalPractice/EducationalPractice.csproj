@@ -12,6 +12,9 @@
     <Compile Update="Forms\ClientCorporateFormSand.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\OrderFormSand.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

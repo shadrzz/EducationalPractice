@@ -1,6 +1,6 @@
 ﻿namespace EducationalPractice
 {
-    partial class OrderForm
+    partial class OrderFormSand
     {
         /// <summary>
         ///  Required designer variable.
@@ -41,6 +41,8 @@
             servicesCheckedListBox = new CheckedListBox();
             costLabel = new Label();
             costValue = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // idLaboratoryVesselLabel
@@ -75,7 +77,7 @@
             customerChoiceComboBox.Name = "customerChoiceComboBox";
             customerChoiceComboBox.Size = new Size(174, 23);
             customerChoiceComboBox.TabIndex = 3;
-            customerChoiceComboBox.SelectedIndexChanged += this.customerChoiceComboBox_SelectedIndexChanged;
+            customerChoiceComboBox.SelectedIndexChanged += customerChoiceComboBox_SelectedIndexChanged;
             // 
             // placeOrderButton
             // 
@@ -85,7 +87,7 @@
             placeOrderButton.TabIndex = 5;
             placeOrderButton.Text = "Оформить заказ";
             placeOrderButton.UseVisualStyleBackColor = true;
-            placeOrderButton.Click += this.placeOrderButton_Click;
+            placeOrderButton.Click += placeOrderButton_Click;
             // 
             // fullNameTextBox
             // 
@@ -94,7 +96,7 @@
             fullNameTextBox.Size = new Size(308, 23);
             fullNameTextBox.TabIndex = 7;
             fullNameTextBox.Visible = false;
-            fullNameTextBox.TextChanged += this.fullNameTextBox_TextChanged;
+            fullNameTextBox.TextChanged += fullNameTextBox_TextChanged;
             // 
             // fullNameLabel
             // 
@@ -138,18 +140,21 @@
             // servicesCheckedListBox
             // 
             servicesCheckedListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.SetColumnSpan(servicesCheckedListBox, 2);
             servicesCheckedListBox.FormattingEnabled = true;
-            servicesCheckedListBox.Location = new Point(239, 93);
+            servicesCheckedListBox.Location = new Point(0, 0);
+            servicesCheckedListBox.Margin = new Padding(0);
             servicesCheckedListBox.Name = "servicesCheckedListBox";
             servicesCheckedListBox.Size = new Size(308, 112);
             servicesCheckedListBox.TabIndex = 12;
             servicesCheckedListBox.Visible = false;
-            servicesCheckedListBox.ItemCheck += this.servicesCheckedListBox_ItemCheck;
+            servicesCheckedListBox.ItemCheck += servicesCheckedListBox_ItemCheck;
             // 
             // costLabel
             // 
             costLabel.AutoSize = true;
-            costLabel.Location = new Point(239, 208);
+            costLabel.Location = new Point(0, 113);
+            costLabel.Margin = new Padding(0);
             costLabel.Name = "costLabel";
             costLabel.Size = new Size(70, 15);
             costLabel.TabIndex = 13;
@@ -159,21 +164,37 @@
             // costValue
             // 
             costValue.AutoSize = true;
-            costValue.Location = new Point(315, 208);
+            costValue.Location = new Point(70, 113);
+            costValue.Margin = new Padding(0);
             costValue.Name = "costValue";
             costValue.Size = new Size(39, 15);
             costValue.TabIndex = 14;
             costValue.Text = "0 руб.";
             costValue.Visible = false;
             // 
-            // OrderForm
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(servicesCheckedListBox, 0, 0);
+            tableLayoutPanel1.Controls.Add(costValue, 1, 1);
+            tableLayoutPanel1.Controls.Add(costLabel, 0, 1);
+            tableLayoutPanel1.Location = new Point(239, 93);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(308, 128);
+            tableLayoutPanel1.TabIndex = 15;
+            // 
+            // OrderFormSand
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(559, 261);
-            Controls.Add(costValue);
-            Controls.Add(costLabel);
-            Controls.Add(servicesCheckedListBox);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(servicesLabel);
             Controls.Add(companyNameTextBox);
             Controls.Add(companyNameLabel);
@@ -186,9 +207,11 @@
             Controls.Add(idLaboratoryVesselLabel);
             Location = new Point(12, 50);
             MinimumSize = new Size(575, 300);
-            Name = "OrderForm";
+            Name = "OrderFormSand";
             Text = "Формирование заказа";
-            Load += this.OrderFormation_Load;
+            Load += OrderFormation_Load;
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -208,5 +231,6 @@
         private CheckedListBox servicesCheckedListBox;
         private Label costLabel;
         private Label costValue;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }
