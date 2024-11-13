@@ -49,7 +49,6 @@
             emailTextBox = new TextBox();
             passwordLabel = new Label();
             passwordTextBox = new TextBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
             SuspendLayout();
             // 
             // companyNameLabel
@@ -237,28 +236,11 @@
             passwordTextBox.Size = new Size(200, 23);
             passwordTextBox.TabIndex = 22;
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Location = new Point(12, 299);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(200, 100);
-            tableLayoutPanel1.TabIndex = 24;
-            // 
             // ClientCorporateForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 411);
-            Controls.Add(tableLayoutPanel1);
             Controls.Add(passwordLabel);
             Controls.Add(passwordTextBox);
             Controls.Add(emailLabel);
@@ -310,6 +292,5 @@
         private TextBox emailTextBox;
         private Label passwordLabel;
         private TextBox passwordTextBox;
-        private TableLayoutPanel tableLayoutPanel1;
     }
 }

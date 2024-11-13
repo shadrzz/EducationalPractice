@@ -28,19 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            companyNameLabel = new Label();
-            companyNameTextBox = new TextBox();
-            saveButton = new Button();
-            addressLabel = new Label();
-            addressTextBox = new TextBox();
-            innLabel = new Label();
-            innLabelTextBox = new TextBox();
-            accountNumberLabel = new Label();
-            accountNumberTextBox = new TextBox();
             bikLabel = new Label();
-            bikTextBox = new TextBox();
+            passwordTextBox = new TextBox();
             ceoNameLabel = new Label();
-            ceoNameLabelTextBox = new TextBox();
+            ceoNameTextBox = new TextBox();
             contactPersonNameLabel = new Label();
             contactPersonNameTextBox = new TextBox();
             contactPhoneLabel = new Label();
@@ -48,132 +39,61 @@
             emailLabel = new Label();
             emailTextBox = new TextBox();
             passwordLabel = new Label();
-            passwordTextBox = new TextBox();
+            bikTextBox = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            accountNumberLabel = new Label();
+            companyNameTextBox = new TextBox();
+            companyNameLabel = new Label();
+            addressLabel = new Label();
+            addressTextBox = new TextBox();
+            innLabel = new Label();
+            innLabelTextBox = new TextBox();
+            accountNumberTextBox = new TextBox();
+            saveButton = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // companyNameLabel
-            // 
-            companyNameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            companyNameLabel.AutoSize = true;
-            companyNameLabel.Location = new Point(12, 40);
-            companyNameLabel.Name = "companyNameLabel";
-            companyNameLabel.Size = new Size(121, 15);
-            companyNameLabel.TabIndex = 4;
-            companyNameLabel.Text = "Название компании:";
-            // 
-            // companyNameTextBox
-            // 
-            companyNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            companyNameTextBox.Location = new Point(12, 58);
-            companyNameTextBox.Name = "companyNameTextBox";
-            companyNameTextBox.Size = new Size(200, 23);
-            companyNameTextBox.TabIndex = 3;
-            // 
-            // saveButton
-            // 
-            saveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            saveButton.Location = new Point(12, 349);
-            saveButton.Name = "saveButton";
-            saveButton.Size = new Size(460, 50);
-            saveButton.TabIndex = 5;
-            saveButton.Text = "Сохранить";
-            saveButton.UseVisualStyleBackColor = true;
-            saveButton.Click += saveButton_Click;
-            // 
-            // addressLabel
-            // 
-            addressLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            addressLabel.AutoSize = true;
-            addressLabel.Location = new Point(12, 91);
-            addressLabel.Name = "addressLabel";
-            addressLabel.Size = new Size(43, 15);
-            addressLabel.TabIndex = 7;
-            addressLabel.Text = "Адрес:";
-            // 
-            // addressTextBox
-            // 
-            addressTextBox.Location = new Point(12, 109);
-            addressTextBox.Name = "addressTextBox";
-            addressTextBox.Size = new Size(200, 23);
-            addressTextBox.TabIndex = 6;
-            // 
-            // innLabel
-            // 
-            innLabel.AutoSize = true;
-            innLabel.Location = new Point(12, 141);
-            innLabel.Name = "innLabel";
-            innLabel.Size = new Size(37, 15);
-            innLabel.TabIndex = 9;
-            innLabel.Text = "ИНН:";
-            // 
-            // innLabelTextBox
-            // 
-            innLabelTextBox.Location = new Point(12, 159);
-            innLabelTextBox.Name = "innLabelTextBox";
-            innLabelTextBox.Size = new Size(200, 23);
-            innLabelTextBox.TabIndex = 8;
-            // 
-            // accountNumberLabel
-            // 
-            accountNumberLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            accountNumberLabel.AutoSize = true;
-            accountNumberLabel.Location = new Point(12, 192);
-            accountNumberLabel.Name = "accountNumberLabel";
-            accountNumberLabel.Size = new Size(97, 15);
-            accountNumberLabel.TabIndex = 11;
-            accountNumberLabel.Text = "Расчётный счёт:";
-            // 
-            // accountNumberTextBox
-            // 
-            accountNumberTextBox.Location = new Point(12, 210);
-            accountNumberTextBox.Name = "accountNumberTextBox";
-            accountNumberTextBox.Size = new Size(200, 23);
-            accountNumberTextBox.TabIndex = 10;
             // 
             // bikLabel
             // 
             bikLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             bikLabel.AutoSize = true;
-            bikLabel.Location = new Point(12, 243);
+            bikLabel.Location = new Point(3, 204);
             bikLabel.Name = "bikLabel";
-            bikLabel.Size = new Size(33, 15);
+            bikLabel.Size = new Size(196, 15);
             bikLabel.TabIndex = 13;
             bikLabel.Text = "БИК:";
             // 
-            // bikTextBox
+            // passwordTextBox
             // 
-            bikTextBox.Location = new Point(12, 261);
-            bikTextBox.Name = "bikTextBox";
-            bikTextBox.Size = new Size(200, 23);
-            bikTextBox.TabIndex = 12;
+            passwordTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            passwordTextBox.Location = new Point(225, 222);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(196, 23);
+            passwordTextBox.TabIndex = 12;
             // 
             // ceoNameLabel
             // 
-            ceoNameLabel.Anchor = AnchorStyles.Right;
             ceoNameLabel.AutoSize = true;
-            ceoNameLabel.Location = new Point(235, 40);
+            ceoNameLabel.Dock = DockStyle.Fill;
+            ceoNameLabel.Location = new Point(225, 0);
             ceoNameLabel.Name = "ceoNameLabel";
-            ceoNameLabel.Size = new Size(116, 15);
+            ceoNameLabel.RightToLeft = RightToLeft.No;
+            ceoNameLabel.Size = new Size(196, 15);
             ceoNameLabel.TabIndex = 15;
             ceoNameLabel.Text = "ФИО руководителя:";
             // 
-            // ceoNameLabelTextBox
+            // ceoNameTextBox
             // 
-            ceoNameLabelTextBox.Anchor = AnchorStyles.Right;
-            ceoNameLabelTextBox.Location = new Point(235, 58);
-            ceoNameLabelTextBox.Name = "ceoNameLabelTextBox";
-            ceoNameLabelTextBox.Size = new Size(200, 23);
-            ceoNameLabelTextBox.TabIndex = 14;
+            ceoNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            ceoNameTextBox.Location = new Point(225, 18);
+            ceoNameTextBox.Name = "ceoNameTextBox";
+            ceoNameTextBox.Size = new Size(196, 23);
+            ceoNameTextBox.TabIndex = 14;
             // 
             // contactPersonNameLabel
             // 
-            contactPersonNameLabel.Anchor = AnchorStyles.Right;
             contactPersonNameLabel.AutoSize = true;
-            contactPersonNameLabel.Location = new Point(235, 91);
+            contactPersonNameLabel.Location = new Point(225, 51);
             contactPersonNameLabel.Name = "contactPersonNameLabel";
             contactPersonNameLabel.Size = new Size(138, 15);
             contactPersonNameLabel.TabIndex = 17;
@@ -181,35 +101,33 @@
             // 
             // contactPersonNameTextBox
             // 
-            contactPersonNameTextBox.Anchor = AnchorStyles.Right;
-            contactPersonNameTextBox.Location = new Point(235, 109);
+            contactPersonNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            contactPersonNameTextBox.Location = new Point(225, 69);
             contactPersonNameTextBox.Name = "contactPersonNameTextBox";
-            contactPersonNameTextBox.Size = new Size(200, 23);
+            contactPersonNameTextBox.Size = new Size(196, 23);
             contactPersonNameTextBox.TabIndex = 16;
             // 
             // contactPhoneLabel
             // 
-            contactPhoneLabel.Anchor = AnchorStyles.Right;
             contactPhoneLabel.AutoSize = true;
-            contactPhoneLabel.Location = new Point(235, 141);
+            contactPhoneLabel.Location = new Point(225, 102);
             contactPhoneLabel.Name = "contactPhoneLabel";
-            contactPhoneLabel.Size = new Size(205, 15);
+            contactPhoneLabel.Size = new Size(175, 15);
             contactPhoneLabel.TabIndex = 19;
             contactPhoneLabel.Text = "Номер телефона контактного лица:";
             // 
             // contactPhoneTextBox
             // 
-            contactPhoneTextBox.Anchor = AnchorStyles.Right;
-            contactPhoneTextBox.Location = new Point(235, 159);
+            contactPhoneTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            contactPhoneTextBox.Location = new Point(225, 120);
             contactPhoneTextBox.Name = "contactPhoneTextBox";
-            contactPhoneTextBox.Size = new Size(200, 23);
+            contactPhoneTextBox.Size = new Size(196, 23);
             contactPhoneTextBox.TabIndex = 18;
             // 
             // emailLabel
             // 
-            emailLabel.Anchor = AnchorStyles.Right;
             emailLabel.AutoSize = true;
-            emailLabel.Location = new Point(235, 192);
+            emailLabel.Location = new Point(225, 153);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new Size(116, 15);
             emailLabel.TabIndex = 21;
@@ -217,29 +135,28 @@
             // 
             // emailTextBox
             // 
-            emailTextBox.Anchor = AnchorStyles.Right;
-            emailTextBox.Location = new Point(235, 210);
+            emailTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            emailTextBox.Location = new Point(225, 171);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(200, 23);
+            emailTextBox.Size = new Size(196, 23);
             emailTextBox.TabIndex = 20;
             // 
             // passwordLabel
             // 
-            passwordLabel.Anchor = AnchorStyles.Right;
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new Point(235, 243);
+            passwordLabel.Location = new Point(225, 204);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new Size(52, 15);
             passwordLabel.TabIndex = 23;
             passwordLabel.Text = "Пароль:";
             // 
-            // passwordTextBox
+            // bikTextBox
             // 
-            passwordTextBox.Anchor = AnchorStyles.Right;
-            passwordTextBox.Location = new Point(235, 261);
-            passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(200, 23);
-            passwordTextBox.TabIndex = 22;
+            bikTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            bikTextBox.Location = new Point(3, 222);
+            bikTextBox.Name = "bikTextBox";
+            bikTextBox.Size = new Size(196, 23);
+            bikTextBox.TabIndex = 22;
             // 
             // tableLayoutPanel1
             // 
@@ -247,37 +164,131 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 1);
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Location = new Point(12, 299);
+            tableLayoutPanel1.Controls.Add(passwordLabel, 2, 12);
+            tableLayoutPanel1.Controls.Add(accountNumberLabel, 0, 9);
+            tableLayoutPanel1.Controls.Add(companyNameTextBox, 0, 1);
+            tableLayoutPanel1.Controls.Add(emailTextBox, 2, 10);
+            tableLayoutPanel1.Controls.Add(emailLabel, 2, 9);
+            tableLayoutPanel1.Controls.Add(companyNameLabel, 0, 0);
+            tableLayoutPanel1.Controls.Add(addressLabel, 0, 3);
+            tableLayoutPanel1.Controls.Add(contactPhoneTextBox, 2, 7);
+            tableLayoutPanel1.Controls.Add(contactPhoneLabel, 2, 6);
+            tableLayoutPanel1.Controls.Add(addressTextBox, 0, 4);
+            tableLayoutPanel1.Controls.Add(innLabel, 0, 6);
+            tableLayoutPanel1.Controls.Add(contactPersonNameTextBox, 2, 4);
+            tableLayoutPanel1.Controls.Add(innLabelTextBox, 0, 7);
+            tableLayoutPanel1.Controls.Add(bikLabel, 0, 12);
+            tableLayoutPanel1.Controls.Add(ceoNameTextBox, 2, 1);
+            tableLayoutPanel1.Controls.Add(ceoNameLabel, 2, 0);
+            tableLayoutPanel1.Controls.Add(contactPersonNameLabel, 2, 3);
+            tableLayoutPanel1.Controls.Add(accountNumberTextBox, 0, 10);
+            tableLayoutPanel1.Controls.Add(passwordTextBox, 2, 13);
+            tableLayoutPanel1.Controls.Add(bikTextBox, 0, 13);
+            tableLayoutPanel1.Controls.Add(saveButton, 0, 15);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(30, 30);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowCount = 16;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
-            tableLayoutPanel1.Size = new Size(423, 100);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            tableLayoutPanel1.Size = new Size(424, 351);
             tableLayoutPanel1.TabIndex = 24;
             // 
-            // textBox1
+            // accountNumberLabel
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(3, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(195, 23);
-            textBox1.TabIndex = 25;
+            accountNumberLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            accountNumberLabel.AutoSize = true;
+            accountNumberLabel.Location = new Point(3, 153);
+            accountNumberLabel.Name = "accountNumberLabel";
+            accountNumberLabel.Size = new Size(196, 15);
+            accountNumberLabel.TabIndex = 26;
+            accountNumberLabel.Text = "Расчётный счёт:";
             // 
-            // label1
+            // companyNameTextBox
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(195, 15);
-            label1.TabIndex = 25;
-            label1.Text = "Название компании:";
+            companyNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            companyNameTextBox.Location = new Point(3, 18);
+            companyNameTextBox.Name = "companyNameTextBox";
+            companyNameTextBox.Size = new Size(196, 23);
+            companyNameTextBox.TabIndex = 25;
+            // 
+            // companyNameLabel
+            // 
+            companyNameLabel.AutoSize = true;
+            companyNameLabel.Dock = DockStyle.Fill;
+            companyNameLabel.Location = new Point(3, 0);
+            companyNameLabel.Name = "companyNameLabel";
+            companyNameLabel.Size = new Size(196, 15);
+            companyNameLabel.TabIndex = 25;
+            companyNameLabel.Text = "Название компании:";
+            // 
+            // addressLabel
+            // 
+            addressLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            addressLabel.AutoSize = true;
+            addressLabel.Location = new Point(3, 51);
+            addressLabel.Name = "addressLabel";
+            addressLabel.Size = new Size(196, 15);
+            addressLabel.TabIndex = 25;
+            addressLabel.Text = "Адрес:";
+            // 
+            // addressTextBox
+            // 
+            addressTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            addressTextBox.Location = new Point(3, 69);
+            addressTextBox.Name = "addressTextBox";
+            addressTextBox.Size = new Size(196, 23);
+            addressTextBox.TabIndex = 25;
+            // 
+            // innLabel
+            // 
+            innLabel.AutoSize = true;
+            innLabel.Location = new Point(3, 102);
+            innLabel.Name = "innLabel";
+            innLabel.Size = new Size(37, 15);
+            innLabel.TabIndex = 25;
+            innLabel.Text = "ИНН:";
+            // 
+            // innLabelTextBox
+            // 
+            innLabelTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            innLabelTextBox.Location = new Point(3, 120);
+            innLabelTextBox.Name = "innLabelTextBox";
+            innLabelTextBox.Size = new Size(196, 23);
+            innLabelTextBox.TabIndex = 25;
+            // 
+            // accountNumberTextBox
+            // 
+            accountNumberTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            accountNumberTextBox.Location = new Point(3, 171);
+            accountNumberTextBox.Name = "accountNumberTextBox";
+            accountNumberTextBox.Size = new Size(196, 23);
+            accountNumberTextBox.TabIndex = 25;
+            // 
+            // saveButton
+            // 
+            saveButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.SetColumnSpan(saveButton, 3);
+            saveButton.Location = new Point(3, 279);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(418, 69);
+            saveButton.TabIndex = 27;
+            saveButton.Text = "Сохранить";
+            saveButton.UseVisualStyleBackColor = true;
             // 
             // ClientCorporateFormSand
             // 
@@ -285,51 +296,20 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 411);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(passwordLabel);
-            Controls.Add(passwordTextBox);
-            Controls.Add(emailLabel);
-            Controls.Add(emailTextBox);
-            Controls.Add(contactPhoneLabel);
-            Controls.Add(contactPhoneTextBox);
-            Controls.Add(contactPersonNameLabel);
-            Controls.Add(contactPersonNameTextBox);
-            Controls.Add(ceoNameLabel);
-            Controls.Add(ceoNameLabelTextBox);
-            Controls.Add(bikLabel);
-            Controls.Add(bikTextBox);
-            Controls.Add(accountNumberLabel);
-            Controls.Add(accountNumberTextBox);
-            Controls.Add(innLabel);
-            Controls.Add(innLabelTextBox);
-            Controls.Add(addressLabel);
-            Controls.Add(addressTextBox);
-            Controls.Add(saveButton);
-            Controls.Add(companyNameLabel);
-            Controls.Add(companyNameTextBox);
             MinimumSize = new Size(500, 450);
             Name = "ClientCorporateFormSand";
+            Padding = new Padding(30);
             Text = "Добавление нового клиента";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label companyNameLabel;
-        private TextBox companyNameTextBox;
-        private Button saveButton;
-        private Label addressLabel;
-        private TextBox addressTextBox;
-        private Label innLabel;
-        private TextBox innLabelTextBox;
-        private Label accountNumberLabel;
-        private TextBox accountNumberTextBox;
         private Label bikLabel;
-        private TextBox bikTextBox;
+        private TextBox passwordTextBox;
         private Label ceoNameLabel;
-        private TextBox ceoNameLabelTextBox;
+        private TextBox ceoNameTextBox;
         private Label contactPersonNameLabel;
         private TextBox contactPersonNameTextBox;
         private Label contactPhoneLabel;
@@ -337,9 +317,16 @@
         private Label emailLabel;
         private TextBox emailTextBox;
         private Label passwordLabel;
-        private TextBox passwordTextBox;
+        private TextBox bikTextBox;
         private TableLayoutPanel tableLayoutPanel1;
-        private TextBox textBox1;
-        private Label label1;
+        private TextBox companyNameTextBox;
+        private Label companyNameLabel;
+        private TextBox addressTextBox;
+        private Label addressLabel;
+        private TextBox accountNumberTextBox;
+        private Label accountNumberLabel;
+        private Label innLabel;
+        private TextBox innLabelTextBox;
+        private Button saveButton;
     }
 }

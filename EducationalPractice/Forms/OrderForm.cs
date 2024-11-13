@@ -305,7 +305,7 @@ namespace EducationalPractice
             string customerChoiceValue = customerChoiceComboBox.SelectedItem.ToString();
             if (customerChoiceValue == "чк")
             {
-                ClientCorporateForm newForm = new ClientCorporateForm();
+                ClientCorporateFormSand newForm = new ClientCorporateFormSand();
                 newForm.Show();
             }
             else if (customerChoiceValue == "тк")
