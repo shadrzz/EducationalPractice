@@ -48,7 +48,7 @@
             // idLaboratoryVesselLabel
             // 
             idLaboratoryVesselLabel.AutoSize = true;
-            idLaboratoryVesselLabel.Location = new Point(12, 25);
+            idLaboratoryVesselLabel.Location = new Point(30, 30);
             idLaboratoryVesselLabel.Name = "idLaboratoryVesselLabel";
             idLaboratoryVesselLabel.Size = new Size(158, 15);
             idLaboratoryVesselLabel.TabIndex = 0;
@@ -57,7 +57,7 @@
             // customerChoiceLabel
             // 
             customerChoiceLabel.AutoSize = true;
-            customerChoiceLabel.Location = new Point(12, 75);
+            customerChoiceLabel.Location = new Point(30, 81);
             customerChoiceLabel.Name = "customerChoiceLabel";
             customerChoiceLabel.Size = new Size(104, 15);
             customerChoiceLabel.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             // idLaboratoryVesselTextBox
             // 
-            idLaboratoryVesselTextBox.Location = new Point(12, 43);
+            idLaboratoryVesselTextBox.Location = new Point(30, 48);
             idLaboratoryVesselTextBox.Name = "idLaboratoryVesselTextBox";
             idLaboratoryVesselTextBox.Size = new Size(174, 23);
             idLaboratoryVesselTextBox.TabIndex = 2;
@@ -73,7 +73,7 @@
             // customerChoiceComboBox
             // 
             customerChoiceComboBox.FormattingEnabled = true;
-            customerChoiceComboBox.Location = new Point(12, 93);
+            customerChoiceComboBox.Location = new Point(30, 99);
             customerChoiceComboBox.Name = "customerChoiceComboBox";
             customerChoiceComboBox.Size = new Size(174, 23);
             customerChoiceComboBox.TabIndex = 3;
@@ -81,7 +81,7 @@
             // 
             // placeOrderButton
             // 
-            placeOrderButton.Location = new Point(12, 158);
+            placeOrderButton.Location = new Point(30, 164);
             placeOrderButton.Name = "placeOrderButton";
             placeOrderButton.Size = new Size(174, 47);
             placeOrderButton.TabIndex = 5;
@@ -91,9 +91,10 @@
             // 
             // fullNameTextBox
             // 
-            fullNameTextBox.Location = new Point(239, 43);
+            fullNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            fullNameTextBox.Location = new Point(239, 48);
             fullNameTextBox.Name = "fullNameTextBox";
-            fullNameTextBox.Size = new Size(308, 23);
+            fullNameTextBox.Size = new Size(279, 23);
             fullNameTextBox.TabIndex = 7;
             fullNameTextBox.Visible = false;
             fullNameTextBox.TextChanged += fullNameTextBox_TextChanged;
@@ -101,7 +102,7 @@
             // fullNameLabel
             // 
             fullNameLabel.AutoSize = true;
-            fullNameLabel.Location = new Point(238, 25);
+            fullNameLabel.Location = new Point(238, 30);
             fullNameLabel.Name = "fullNameLabel";
             fullNameLabel.Size = new Size(37, 15);
             fullNameLabel.TabIndex = 6;
@@ -111,16 +112,16 @@
             // companyNameTextBox
             // 
             companyNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            companyNameTextBox.Location = new Point(239, 43);
+            companyNameTextBox.Location = new Point(238, 48);
             companyNameTextBox.Name = "companyNameTextBox";
-            companyNameTextBox.Size = new Size(308, 23);
+            companyNameTextBox.Size = new Size(279, 23);
             companyNameTextBox.TabIndex = 9;
             companyNameTextBox.Visible = false;
             // 
             // companyNameLabel
             // 
             companyNameLabel.AutoSize = true;
-            companyNameLabel.Location = new Point(239, 25);
+            companyNameLabel.Location = new Point(239, 30);
             companyNameLabel.Name = "companyNameLabel";
             companyNameLabel.Size = new Size(121, 15);
             companyNameLabel.TabIndex = 8;
@@ -130,7 +131,7 @@
             // servicesLabel
             // 
             servicesLabel.AutoSize = true;
-            servicesLabel.Location = new Point(239, 75);
+            servicesLabel.Location = new Point(238, 81);
             servicesLabel.Name = "servicesLabel";
             servicesLabel.Size = new Size(48, 15);
             servicesLabel.TabIndex = 10;
@@ -145,7 +146,7 @@
             servicesCheckedListBox.Location = new Point(0, 0);
             servicesCheckedListBox.Margin = new Padding(0);
             servicesCheckedListBox.Name = "servicesCheckedListBox";
-            servicesCheckedListBox.Size = new Size(308, 112);
+            servicesCheckedListBox.Size = new Size(279, 112);
             servicesCheckedListBox.TabIndex = 12;
             servicesCheckedListBox.Visible = false;
             servicesCheckedListBox.ItemCheck += servicesCheckedListBox_ItemCheck;
@@ -153,7 +154,7 @@
             // costLabel
             // 
             costLabel.AutoSize = true;
-            costLabel.Location = new Point(0, 113);
+            costLabel.Location = new Point(0, 117);
             costLabel.Margin = new Padding(0);
             costLabel.Name = "costLabel";
             costLabel.Size = new Size(70, 15);
@@ -164,7 +165,7 @@
             // costValue
             // 
             costValue.AutoSize = true;
-            costValue.Location = new Point(70, 113);
+            costValue.Location = new Point(70, 117);
             costValue.Margin = new Padding(0);
             costValue.Name = "costValue";
             costValue.Size = new Size(39, 15);
@@ -181,12 +182,12 @@
             tableLayoutPanel1.Controls.Add(servicesCheckedListBox, 0, 0);
             tableLayoutPanel1.Controls.Add(costValue, 1, 1);
             tableLayoutPanel1.Controls.Add(costLabel, 0, 1);
-            tableLayoutPanel1.Location = new Point(239, 93);
+            tableLayoutPanel1.Location = new Point(239, 99);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(308, 128);
+            tableLayoutPanel1.Size = new Size(279, 132);
             tableLayoutPanel1.TabIndex = 15;
             // 
             // OrderFormSand

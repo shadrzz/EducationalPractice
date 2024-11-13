@@ -55,7 +55,7 @@
             // customerChoiceLabel
             // 
             customerChoiceLabel.AutoSize = true;
-            customerChoiceLabel.Location = new Point(12, 75);
+            customerChoiceLabel.Location = new Point(12, 76);
             customerChoiceLabel.Name = "customerChoiceLabel";
             customerChoiceLabel.Size = new Size(104, 15);
             customerChoiceLabel.TabIndex = 1;
@@ -75,7 +75,7 @@
             customerChoiceComboBox.Name = "customerChoiceComboBox";
             customerChoiceComboBox.Size = new Size(174, 23);
             customerChoiceComboBox.TabIndex = 3;
-            customerChoiceComboBox.SelectedIndexChanged += this.customerChoiceComboBox_SelectedIndexChanged;
+            customerChoiceComboBox.SelectedIndexChanged += customerChoiceComboBox_SelectedIndexChanged;
             // 
             // placeOrderButton
             // 
@@ -85,7 +85,7 @@
             placeOrderButton.TabIndex = 5;
             placeOrderButton.Text = "Оформить заказ";
             placeOrderButton.UseVisualStyleBackColor = true;
-            placeOrderButton.Click += this.placeOrderButton_Click;
+            placeOrderButton.Click += placeOrderButton_Click;
             // 
             // fullNameTextBox
             // 
@@ -94,7 +94,7 @@
             fullNameTextBox.Size = new Size(308, 23);
             fullNameTextBox.TabIndex = 7;
             fullNameTextBox.Visible = false;
-            fullNameTextBox.TextChanged += this.fullNameTextBox_TextChanged;
+            fullNameTextBox.TextChanged += fullNameTextBox_TextChanged;
             // 
             // fullNameLabel
             // 
@@ -144,7 +144,7 @@
             servicesCheckedListBox.Size = new Size(308, 112);
             servicesCheckedListBox.TabIndex = 12;
             servicesCheckedListBox.Visible = false;
-            servicesCheckedListBox.ItemCheck += this.servicesCheckedListBox_ItemCheck;
+            servicesCheckedListBox.ItemCheck += servicesCheckedListBox_ItemCheck;
             // 
             // costLabel
             // 
@@ -188,7 +188,7 @@
             MinimumSize = new Size(575, 300);
             Name = "OrderForm";
             Text = "Формирование заказа";
-            Load += this.OrderFormation_Load;
+            Load += OrderFormation_Load;
             ResumeLayout(false);
             PerformLayout();
         }
