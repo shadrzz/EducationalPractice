@@ -1,16 +1,25 @@
+using EducationalPractice.Forms;
 using EducationalPractice.Models;
+using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace EducationalPractice
 {
-    public partial class OrderFormation : Form
+    public partial class OrderForm : Form
     {
-        public OrderFormation()
+        private List<Order> orders;
+        private List<ClientCorporate> clientsCorporate;
+        private List<ClientIndividual> clientsIndividual;
+        private List<Service> services;
+        private List<Employee> employees;
+
+        public OrderForm()
         {
             InitializeComponent();
         }
         private void OrderFormation_Load(object sender, EventArgs e)
         {
-            var services = new List<Service>
+            services = new List<Service>
             {
                 new Service(336, "Содержание хрома", "8HFJHG443", "12 часов", "0.04", 12000, 1100),
                 new Service(353, "Содержание никеля", "87FDJKHJ", "3 сут", "0.012", 24000, 800),
@@ -27,7 +36,7 @@ namespace EducationalPractice
                 new Service(123, "Соответствие срокам годности", "638VVNQ3", "360 мин", "1 мес", 10000, 600)
             };
 
-            var clientsCorporate = new List<ClientCorporate>
+            clientsCorporate = new List<ClientCorporate>
             {
                 new ClientCorporate("ЗАО \"Русская косметика\"", "МО, Одинцово, Ворошилова ул, 153", "7927728472", "78123678892", "445334327",
                "Харитонова Ева Адамовна", "Кузнецов Александр Сергеевич", "16(7185)250-54-23556", "dcoppit@mac.com", "UL1234", "hh123"),
@@ -45,7 +54,7 @@ namespace EducationalPractice
                            "Софронов Фёдор Иванович", "Зубкова Василиса Петровна", "73(5598)021-52-52563", "research@sbcglobal.net", "UL1240", "ue378")
             };
 
-            var clientsIndividual = new List<ClientIndividual>
+            clientsIndividual = new List<ClientIndividual>
             {
                 new ClientIndividual("Фролов Андрей Иванович", "45462526", "Серия 1180 Номер 176596", "7/14/2001", "344288, г. Москва, ул. Чехова, 1, кв. 34", "gohufreilagrau-3818@yopmail.com", "cl12345"),
                 new ClientIndividual("Николаев Даниил Всеволодович", "45462527", "Серия 2280 Номер 223523", "2/10/2001", "614164, г. Москва, ул. Степная, 30, кв. 75", "xawugosune-1385@yopmail.com", "cl12346"),
@@ -119,7 +128,7 @@ namespace EducationalPractice
                 new ClientIndividual("Коршунов Кирилл Максимович", "45462595", "Серия 1308 Номер 703305", "5/22/1985", "450750, г. Москва, ул. Клубная, 23, кв. 90", "pacocha.robbie@yahoo.com", "cl12414")
             };
 
-            var orders = new List<Order>
+            orders = new List<Order>
             {
                 new Order(1, "45462527/44632", "3/12/2022", "45462527", new List<int> { 34, 31, 353, 336 }, "Новая", null, "ID 104", "78 ч"),
                 new Order(2, "45462528/44633", "3/13/2022", "45462528", new List<int> { 98, 45, 89, 99, 123 }, "На исследовании", null, "ID 105", "16 ч"),
@@ -173,7 +182,7 @@ namespace EducationalPractice
                 new Order(50, "45462576/44681", "4/30/2022", "45462576", new List<int> { 98, 45, 89, 353, 336, 43 }, "Новая", null, "ID 110", "16 ч")
             };
 
-            var employees = new List<Employee>
+            employees = new List<Employee>
             {
                 new Employee("ID 101", "Менеджер по работе с клиентами", "Иванов Иван Иванович", "Ivanov@namecomp.ru", "2L6KZG", new List<int>(), "15:05:2022 13:13:00"),
                 new Employee("ID 102", "Менеджер по работе с клиентами", "Петров Петр Петрович", "petrov@namecomp.ru", "uzWC67", new List<int>(), "15:05:2022 13:13:01"),
@@ -187,17 +196,63 @@ namespace EducationalPractice
                 new Employee("ID 110", "Контролер ОТК", "Смирнова Ульяна Гордеевна", "smirnova@@namecomp.ru", "JlFRCZ", new List<int> {98, 45, 89, 353, 336, 34}, "15:05:2022 13:13:09")
             };
 
-            idLaboratoryVesselTextBox.PlaceholderText = "sfasfqwfq";
-            idLaboratoryVesselTextBox.Width = 200;
-            
+            // Установка подсказки для номера заказа
+            idLaboratoryVesselTextBox.Text = GetNextOrderNumber();
+
+            // Обработчик нажатия Enter
+            idLaboratoryVesselTextBox.KeyPress += IdLaboratoryVesselTextBox_KeyPress;
+
 
             string[] customerItems = { "ЮЛ", "ФЛ" };
             customerChoiceComboBox.Items.AddRange(customerItems);
+            customerChoiceComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
             foreach (var service in services)
             {
                 servicesCheckedListBox.Items.Add(service.Name);
             }
+        }
+        private string GetNextOrderNumber()
+        {
+            // Находим последний номер заказа, исключая заказы в архиве (например, с статусом "Закрыта")
+            var lastOrderNumber = orders
+                .Select(order => ParseOrderNumber(order.OrderNumber))
+                .Max();
+
+            // Возвращаем следующий номер
+            return (lastOrderNumber + 1).ToString();
+        }
+
+        private int ParseOrderNumber(string orderNumber)
+        {
+            // Извлекаем числовую часть из номера заказа
+            int numericPart;
+            if (int.TryParse(orderNumber.Split('/')[0], out numericPart))
+                return numericPart;
+            return 0;
+        }
+
+        private void IdLaboratoryVesselTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string enteredVesselNumber = idLaboratoryVesselTextBox.Text;
+
+                // Проверяем уникальность номера
+                if (IsUniqueVesselNumber(enteredVesselNumber))
+                {
+                    MessageBox.Show("Номер сосуда подтвержден: " + enteredVesselNumber);
+                }
+                else
+                {
+                    MessageBox.Show("Этот номер уже существует. Пожалуйста, введите уникальный номер.");
+                }
+            }
+        }
+
+        private bool IsUniqueVesselNumber(string vesselNumber)
+        {
+            return !orders.Any(order => order.OrderNumber.Split('/')[0] == vesselNumber);
         }
 
         private void customerChoiceComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -208,28 +263,85 @@ namespace EducationalPractice
 
                 companyNameLabel.Visible = isLegalEntity;
                 companyNameTextBox.Visible = isLegalEntity;
-                servicesLabel.Visible = isLegalEntity;
-                servicesCheckedListBox.Visible = isLegalEntity;
 
                 fullNameLabel.Visible = !isLegalEntity;
-                fullNameLabelTextBox.Visible = !isLegalEntity;
+                fullNameTextBox.Visible = !isLegalEntity;
+            }
+            servicesLabel.Visible = true;
+            servicesCheckedListBox.Visible = true;
+            costLabel.Visible = true;
+            costValue.Visible = true;
+        }
+
+        private void fullNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string fullName = fullNameTextBox.Text.Trim();
+
+            // Проверка наличия клиента по ФИО
+            if (!string.IsNullOrEmpty(fullName) && !clientsIndividual.Any(c => c.FullName == fullName))
+            {
+                // Добавление нового клиента
+                ClientIndividual newClient = new ClientIndividual(
+                    fullName,
+                    "новый код клиента",
+                    "новые паспортные данные",
+                    "дата рождения",
+                    "адрес",
+                    "email@example.com",
+                    "пароль"
+                );
+
+                clientsIndividual.Add(newClient);
+                MessageBox.Show($"Клиент {newClient.FullName} добавлен.");
+            }
+            else
+            {
+                MessageBox.Show("Клиент с таким ФИО уже существует или поле ФИО пустое.");
             }
         }
 
-        private void resetButton_Click(object sender, EventArgs e)
+        private void placeOrderButton_Click(object sender, EventArgs e)
         {
-            idLaboratoryVesselTextBox.Text = "";
-            customerChoiceComboBox.SelectedIndex = -1;
+            string customerChoiceValue = customerChoiceComboBox.SelectedItem.ToString();
+            if (customerChoiceValue == "ЮЛ")
+            {
+                ClientCorporateForm newForm = new ClientCorporateForm();
+                newForm.Show();
+            }
+            else if (customerChoiceValue == "ФЛ")
+            {
+                ClientIndividualForm newForm = new ClientIndividualForm(clientsIndividual);
+                newForm.Show();
+            }
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void servicesCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            MessageBox.Show(
-                $"ID: {(idLaboratoryVesselTextBox.Text == "" ? "Пусто" : $"{idLaboratoryVesselTextBox.Text}")}\nCustomer's Choice: {(customerChoiceComboBox.Text == "" ? "Пусто" : $"{customerChoiceComboBox.Text}")}",
-                "Информация",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            // Get the item that is being checked or unchecked
+            string item = servicesCheckedListBox.Items[e.Index].ToString();
+
+            // Get the service associated with the checked item
+            Service selectedService = services.FirstOrDefault(s => s.Name == item);
+
+            if (selectedService != null)
+            {
+                // Adjust total cost based on the NewValue
+                decimal currentTotalCost = decimal.Parse(costValue.Text);
+
+                if (e.NewValue == CheckState.Checked)
+                {
+                    // If the item is being checked, add its cost
+                    currentTotalCost += selectedService.Cost;
+                }
+                else if (e.NewValue == CheckState.Unchecked)
+                {
+                    // If the item is being unchecked, subtract its cost
+                    currentTotalCost -= selectedService.Cost;
+                }
+
+                // Update the cost display
+                costValue.Text = currentTotalCost.ToString();
+            }
         }
     }
 }

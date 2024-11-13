@@ -1,6 +1,6 @@
 ﻿namespace EducationalPractice.Models
 {
-    internal class ClientCorporate
+    public class ClientCorporate
     {
         public string CompanyName { get; set; }
         public string Address { get; set; }

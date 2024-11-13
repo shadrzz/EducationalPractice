@@ -1,6 +1,6 @@
 ﻿namespace EducationalPractice.Models
 {
-    internal class Employee
+    public class Employee
     {
         public string EmployeeCode { get; set; }
         public string Position { get; set; }

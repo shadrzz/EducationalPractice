@@ -1,6 +1,6 @@
 ﻿namespace EducationalPractice
 {
-    partial class OrderFormation
+    partial class OrderForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -32,14 +32,15 @@
             customerChoiceLabel = new Label();
             idLaboratoryVesselTextBox = new TextBox();
             customerChoiceComboBox = new ComboBox();
-            resetButton = new Button();
-            saveButton = new Button();
-            fullNameLabelTextBox = new TextBox();
+            placeOrderButton = new Button();
+            fullNameTextBox = new TextBox();
             fullNameLabel = new Label();
             companyNameTextBox = new TextBox();
             companyNameLabel = new Label();
             servicesLabel = new Label();
             servicesCheckedListBox = new CheckedListBox();
+            costLabel = new Label();
+            costValue = new Label();
             SuspendLayout();
             // 
             // idLaboratoryVesselLabel
@@ -76,33 +77,24 @@
             customerChoiceComboBox.TabIndex = 3;
             customerChoiceComboBox.SelectedIndexChanged += customerChoiceComboBox_SelectedIndexChanged;
             // 
-            // resetButton
+            // placeOrderButton
             // 
-            resetButton.Location = new Point(599, 118);
-            resetButton.Name = "resetButton";
-            resetButton.Size = new Size(150, 50);
-            resetButton.TabIndex = 4;
-            resetButton.Text = "Сброс";
-            resetButton.UseVisualStyleBackColor = true;
-            resetButton.Click += resetButton_Click;
+            placeOrderButton.Location = new Point(599, 40);
+            placeOrderButton.Name = "placeOrderButton";
+            placeOrderButton.Size = new Size(150, 50);
+            placeOrderButton.TabIndex = 5;
+            placeOrderButton.Text = "Оформить заказ";
+            placeOrderButton.UseVisualStyleBackColor = true;
+            placeOrderButton.Click += placeOrderButton_Click;
             // 
-            // saveButton
+            // fullNameTextBox
             // 
-            saveButton.Location = new Point(599, 40);
-            saveButton.Name = "saveButton";
-            saveButton.Size = new Size(150, 50);
-            saveButton.TabIndex = 5;
-            saveButton.Text = "Сохранить";
-            saveButton.UseVisualStyleBackColor = true;
-            saveButton.Click += saveButton_Click;
-            // 
-            // fullNameLabelTextBox
-            // 
-            fullNameLabelTextBox.Location = new Point(250, 162);
-            fullNameLabelTextBox.Name = "fullNameLabelTextBox";
-            fullNameLabelTextBox.Size = new Size(293, 23);
-            fullNameLabelTextBox.TabIndex = 7;
-            fullNameLabelTextBox.Visible = false;
+            fullNameTextBox.Location = new Point(250, 162);
+            fullNameTextBox.Name = "fullNameTextBox";
+            fullNameTextBox.Size = new Size(293, 23);
+            fullNameTextBox.TabIndex = 7;
+            fullNameTextBox.Visible = false;
+            fullNameTextBox.TextChanged += fullNameTextBox_TextChanged;
             // 
             // fullNameLabel
             // 
@@ -116,7 +108,7 @@
             // 
             // companyNameTextBox
             // 
-            companyNameTextBox.Location = new Point(250, 162);
+            companyNameTextBox.Location = new Point(250, 195);
             companyNameTextBox.Name = "companyNameTextBox";
             companyNameTextBox.Size = new Size(293, 23);
             companyNameTextBox.TabIndex = 9;
@@ -125,7 +117,7 @@
             // companyNameLabel
             // 
             companyNameLabel.AutoSize = true;
-            companyNameLabel.Location = new Point(40, 162);
+            companyNameLabel.Location = new Point(40, 195);
             companyNameLabel.Name = "companyNameLabel";
             companyNameLabel.Size = new Size(118, 15);
             companyNameLabel.TabIndex = 8;
@@ -150,20 +142,42 @@
             servicesCheckedListBox.Size = new Size(293, 112);
             servicesCheckedListBox.TabIndex = 12;
             servicesCheckedListBox.Visible = false;
+            servicesCheckedListBox.ItemCheck += servicesCheckedListBox_ItemCheck;
+            // 
+            // costLabel
+            // 
+            costLabel.AutoSize = true;
+            costLabel.Location = new Point(598, 108);
+            costLabel.Name = "costLabel";
+            costLabel.Size = new Size(70, 15);
+            costLabel.TabIndex = 13;
+            costLabel.Text = "Стоимость:";
+            costLabel.Visible = false;
+            // 
+            // costValue
+            // 
+            costValue.AutoSize = true;
+            costValue.Location = new Point(665, 108);
+            costValue.Name = "costValue";
+            costValue.Size = new Size(13, 15);
+            costValue.TabIndex = 14;
+            costValue.Text = "0";
+            costValue.Visible = false;
             // 
             // OrderFormation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(771, 412);
+            Controls.Add(costValue);
+            Controls.Add(costLabel);
             Controls.Add(servicesCheckedListBox);
             Controls.Add(servicesLabel);
             Controls.Add(companyNameTextBox);
             Controls.Add(companyNameLabel);
-            Controls.Add(fullNameLabelTextBox);
+            Controls.Add(fullNameTextBox);
             Controls.Add(fullNameLabel);
-            Controls.Add(saveButton);
-            Controls.Add(resetButton);
+            Controls.Add(placeOrderButton);
             Controls.Add(customerChoiceComboBox);
             Controls.Add(idLaboratoryVesselTextBox);
             Controls.Add(customerChoiceLabel);
@@ -181,13 +195,14 @@
         private Label customerChoiceLabel;
         private TextBox idLaboratoryVesselTextBox;
         private ComboBox customerChoiceComboBox;
-        private Button resetButton;
-        private Button saveButton;
-        private TextBox fullNameLabelTextBox;
+        private Button placeOrderButton;
+        private TextBox fullNameTextBox;
         private Label fullNameLabel;
         private TextBox companyNameTextBox;
         private Label companyNameLabel;
         private Label servicesLabel;
         private CheckedListBox servicesCheckedListBox;
+        private Label costLabel;
+        private Label costValue;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace EducationalPractice.Models
 {
-    internal class ClientIndividual
+    public class ClientIndividual
     {
         public string FullName { get; set; }
         public string ClientCode { get; set; }
