@@ -113,9 +113,9 @@
             // companyNameTextBox
             // 
             companyNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            companyNameTextBox.Location = new Point(238, 48);
+            companyNameTextBox.Location = new Point(239, 48);
             companyNameTextBox.Name = "companyNameTextBox";
-            companyNameTextBox.Size = new Size(280, 23);
+            companyNameTextBox.Size = new Size(279, 23);
             companyNameTextBox.TabIndex = 2;
             companyNameTextBox.Visible = false;
             // 
