@@ -31,5 +31,22 @@ namespace EducationalPractice.Controllers
         {
             return !orders.Any(order => order.OrderNumber.Split('/')[0] == vesselNumber);
         }
+
+        public string ValidateVesselNumber(string vesselNumber)
+        {
+            if (IsUniqueVesselNumber(vesselNumber))
+            {
+                return $"Номер сосуда подтвержден: {vesselNumber}";
+            }
+            else
+            {
+                return "Этот номер уже существует. Пожалуйста, введите уникальный номер.";
+            }
         }
+
+        public string[] GetCustomerTypes()
+        {
+            return [ "ЮЛ", "ФЛ" ];
+        }
+    }
 }

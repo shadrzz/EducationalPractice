@@ -20,5 +20,10 @@ namespace EducationalPractice.Controllers
                 .Where(s => selectedServices.Contains(s.Name))
                 .Sum(s => s.Cost);
         }
+
+        public List<string> GetServiceNames()
+        {
+            return services.Select(s => s.Name).ToList();
+        }
     }
 }

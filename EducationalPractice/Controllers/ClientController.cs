@@ -1,4 +1,5 @@
-﻿using EducationalPractice.Models.Client;
+﻿using EducationalPractice.Forms;
+using EducationalPractice.Models.Client;
 using EducationalPractice.Utils;
 
 namespace EducationalPractice.Controllers
@@ -14,14 +15,38 @@ namespace EducationalPractice.Controllers
             individualClients = DataInitializer.GetIndividualClients();
         }
 
-        public bool AddIndividualClient(ClientIndividual client)
+        public ClientAddResult AddIndividualClientIfNotExists(string fullName)
         {
-            if (!individualClients.Any(c => c.FullName == client.FullName))
+            if (string.IsNullOrEmpty(fullName))
             {
-                individualClients.Add(client);
-                return true;
+                return new ClientAddResult(false, "Поле ФИО пустое.");
             }
-            return false;
+
+            if (individualClients.Any(c => c.FullName == fullName))
+            {
+                return new ClientAddResult(false, "Клиент с таким ФИО уже существует.");
+            }
+
+            var newClient = new ClientIndividual(fullName, "новый код клиента", "новые паспортные данные", "дата рождения", "адрес", "email@example.com", "пароль");
+            individualClients.Add(newClient);
+            return new ClientAddResult(true, $"Клиент {newClient.FullName} добавлен.");
+        }
+
+        public bool IsLegalEntity(string clientType)
+        {
+            return clientType == "ЮЛ";
+        }
+
+        public Form GetClientForm(string clientType)
+        {
+            if (IsLegalEntity(clientType))
+            {
+                return new ClientCorporateForm();
+            }
+            else
+            {
+                return new ClientIndividualForm(GetIndividualClients());
+            }
         }
 
         public List<ClientCorporate> GetCorporateClients() => corporateClients;
