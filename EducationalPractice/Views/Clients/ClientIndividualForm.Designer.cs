@@ -227,6 +227,7 @@
             button1.TabIndex = 7;
             button1.Text = "Сохранить";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += saveButton_Click;
             // 
             // ClientIndividualForm
             // 
