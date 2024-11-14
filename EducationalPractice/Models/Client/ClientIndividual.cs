@@ -1,4 +1,4 @@
-﻿namespace EducationalPractice.Models
+﻿namespace EducationalPractice.Models.Client
 {
     public class ClientIndividual
     {

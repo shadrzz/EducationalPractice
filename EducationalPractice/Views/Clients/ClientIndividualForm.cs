@@ -1,4 +1,4 @@
-﻿using EducationalPractice.Models;
+﻿using EducationalPractice.Models.Client;
 using System.Data;
 
 namespace EducationalPractice.Forms
