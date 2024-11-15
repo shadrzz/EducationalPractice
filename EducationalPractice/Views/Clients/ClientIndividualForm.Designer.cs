@@ -52,7 +52,7 @@
             emailTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             emailTextBox.Location = new Point(3, 69);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(196, 23);
+            emailTextBox.Size = new Size(221, 23);
             emailTextBox.TabIndex = 1;
             // 
             // dateOfBirthLabel
@@ -61,7 +61,7 @@
             dateOfBirthLabel.AutoSize = true;
             dateOfBirthLabel.Location = new Point(3, 102);
             dateOfBirthLabel.Name = "dateOfBirthLabel";
-            dateOfBirthLabel.Size = new Size(196, 15);
+            dateOfBirthLabel.Size = new Size(221, 15);
             dateOfBirthLabel.TabIndex = 6;
             dateOfBirthLabel.Text = "Дата рождения:";
             // 
@@ -70,43 +70,43 @@
             dateOfBirthTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dateOfBirthTextBox.Location = new Point(3, 120);
             dateOfBirthTextBox.Name = "dateOfBirthTextBox";
-            dateOfBirthTextBox.Size = new Size(196, 23);
+            dateOfBirthTextBox.Size = new Size(221, 23);
             dateOfBirthTextBox.TabIndex = 2;
             // 
             // passportDataLabel
             // 
             passportDataLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             passportDataLabel.AutoSize = true;
-            passportDataLabel.Location = new Point(225, 0);
+            passportDataLabel.Location = new Point(250, 0);
             passportDataLabel.Name = "passportDataLabel";
-            passportDataLabel.Size = new Size(196, 15);
+            passportDataLabel.Size = new Size(221, 15);
             passportDataLabel.TabIndex = 8;
             passportDataLabel.Text = "Серия и номер паспорта:";
             // 
             // passportDataTextBox
             // 
             passportDataTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            passportDataTextBox.Location = new Point(225, 18);
+            passportDataTextBox.Location = new Point(250, 18);
             passportDataTextBox.Name = "passportDataTextBox";
-            passportDataTextBox.Size = new Size(196, 23);
+            passportDataTextBox.Size = new Size(221, 23);
             passportDataTextBox.TabIndex = 4;
             // 
             // phoneNumberLabel
             // 
             phoneNumberLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             phoneNumberLabel.AutoSize = true;
-            phoneNumberLabel.Location = new Point(225, 51);
+            phoneNumberLabel.Location = new Point(250, 51);
             phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new Size(196, 15);
+            phoneNumberLabel.Size = new Size(221, 15);
             phoneNumberLabel.TabIndex = 10;
             phoneNumberLabel.Text = "Номер телефона:";
             // 
             // phoneNumberTextBox
             // 
             phoneNumberTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            phoneNumberTextBox.Location = new Point(225, 69);
+            phoneNumberTextBox.Location = new Point(250, 69);
             phoneNumberTextBox.Name = "phoneNumberTextBox";
-            phoneNumberTextBox.Size = new Size(196, 23);
+            phoneNumberTextBox.Size = new Size(221, 23);
             phoneNumberTextBox.TabIndex = 5;
             // 
             // fullNameLabel
@@ -115,7 +115,7 @@
             fullNameLabel.AutoSize = true;
             fullNameLabel.Location = new Point(3, 0);
             fullNameLabel.Name = "fullNameLabel";
-            fullNameLabel.Size = new Size(196, 15);
+            fullNameLabel.Size = new Size(221, 15);
             fullNameLabel.TabIndex = 4;
             fullNameLabel.Text = "ФИО:";
             // 
@@ -124,7 +124,7 @@
             fullNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             fullNameTextBox.Location = new Point(3, 18);
             fullNameTextBox.Name = "fullNameTextBox";
-            fullNameTextBox.Size = new Size(196, 23);
+            fullNameTextBox.Size = new Size(221, 23);
             fullNameTextBox.TabIndex = 0;
             // 
             // emailLabel
@@ -133,7 +133,7 @@
             emailLabel.AutoSize = true;
             emailLabel.Location = new Point(3, 51);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(196, 15);
+            emailLabel.Size = new Size(221, 15);
             emailLabel.TabIndex = 2;
             emailLabel.Text = "Электронная почта:";
             // 
@@ -143,7 +143,7 @@
             addressLabel.AutoSize = true;
             addressLabel.Location = new Point(3, 153);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new Size(196, 15);
+            addressLabel.Size = new Size(221, 15);
             addressLabel.TabIndex = 12;
             addressLabel.Text = "Адрес:";
             // 
@@ -152,26 +152,27 @@
             addressTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             addressTextBox.Location = new Point(3, 171);
             addressTextBox.Name = "addressTextBox";
-            addressTextBox.Size = new Size(196, 23);
+            addressTextBox.Size = new Size(221, 23);
             addressTextBox.TabIndex = 3;
             // 
             // passwordLabel
             // 
             passwordLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new Point(225, 102);
+            passwordLabel.Location = new Point(250, 102);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(196, 15);
+            passwordLabel.Size = new Size(221, 15);
             passwordLabel.TabIndex = 14;
             passwordLabel.Text = "Пароль:";
             // 
             // passwordTextBox
             // 
             passwordTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            passwordTextBox.Location = new Point(225, 120);
+            passwordTextBox.Location = new Point(250, 120);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(196, 23);
+            passwordTextBox.Size = new Size(221, 23);
             passwordTextBox.TabIndex = 6;
+            passwordTextBox.UseSystemPasswordChar = true;
             // 
             // tableLayoutPanel1
             // 
@@ -214,7 +215,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(424, 351);
+            tableLayoutPanel1.Size = new Size(474, 351);
             tableLayoutPanel1.TabIndex = 25;
             // 
             // button1
@@ -223,7 +224,7 @@
             tableLayoutPanel1.SetColumnSpan(button1, 3);
             button1.Location = new Point(3, 279);
             button1.Name = "button1";
-            button1.Size = new Size(418, 69);
+            button1.Size = new Size(468, 69);
             button1.TabIndex = 7;
             button1.Text = "Сохранить";
             button1.UseVisualStyleBackColor = true;
@@ -233,9 +234,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(484, 411);
+            ClientSize = new Size(534, 411);
             Controls.Add(tableLayoutPanel1);
-            MinimumSize = new Size(500, 450);
+            MinimumSize = new Size(550, 450);
             Name = "ClientIndividualForm";
             Padding = new Padding(30);
             Text = "Добавление нового клиента";

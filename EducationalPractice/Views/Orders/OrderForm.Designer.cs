@@ -98,7 +98,6 @@
             fullNameTextBox.Size = new Size(279, 23);
             fullNameTextBox.TabIndex = 3;
             fullNameTextBox.Visible = false;
-            fullNameTextBox.TextChanged += fullNameTextBox_TextChanged;
             // 
             // fullNameLabel
             // 

@@ -1,6 +1,6 @@
 ﻿namespace EducationalPractice.Controllers
 {
-    internal class EmployeeController
+    public class EmployeeController
     {
     }
 }

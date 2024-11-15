@@ -1,9 +1,10 @@
 ﻿using EducationalPractice.Models;
+using EducationalPractice.Models.Client;
 using EducationalPractice.Utils;
 
 namespace EducationalPractice.Controllers
 {
-    internal class OrderController
+    public class OrderController
     {
         private List<Order> orders;
 
@@ -47,6 +48,18 @@ namespace EducationalPractice.Controllers
         public string[] GetCustomerTypes()
         {
             return [ "ЮЛ", "ФЛ" ];
+        }
+
+        public ClientAddResult HandleOrder(string clientType, string fullName, string companyName, ClientController clientController)
+        {
+            if (clientController.IsLegalEntity(clientType))
+            {
+                return clientController.AddCorporateClientIfNotExists(companyName);
+            }
+            else
+            {
+                return clientController.AddIndividualClientIfNotExists(fullName);
+            }
         }
     }
 }

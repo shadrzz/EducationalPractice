@@ -4,7 +4,7 @@ using EducationalPractice.Utils;
 
 namespace EducationalPractice.Controllers
 {
-    internal class ClientController
+    public class ClientController
     {
         private List<ClientCorporate> corporateClients;
         private List<ClientIndividual> individualClients;
@@ -13,6 +13,27 @@ namespace EducationalPractice.Controllers
         {
             corporateClients = DataInitializer.GetCorporateClients();
             individualClients = DataInitializer.GetIndividualClients();
+        }
+
+        public ClientAddResult AddCorporateClientIfNotExists(string companyName)
+        {
+            if (string.IsNullOrEmpty(companyName))
+            {
+                return new ClientAddResult(false, "Поле названия компании пустое.");
+            }
+
+            if (corporateClients.Any(c => c.CompanyName == companyName))
+            {
+                return new ClientAddResult(false, "Клиент с таким названием компании уже существует.");
+            }
+
+            var newClient = new ClientCorporate(
+                companyName, "МО, Ногинск, Заводская ул, 34", "7927425472", "78122378892", "493993327",
+                           "Дементьев Ярослав Георгиевич", "Розанова Камила Максимовна", "2(63)151-61-70518", "stecoop@yahoo.com", "UL1236", "8739"
+            );
+
+            corporateClients.Add(newClient);
+            return new ClientAddResult(true, $"Клиент {newClient.CompanyName} добавлен.");
         }
 
         public ClientAddResult AddIndividualClientIfNotExists(string fullName)

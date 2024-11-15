@@ -9,12 +9,12 @@ namespace EducationalPractice
         private readonly ClientController clientController;
         private readonly ServiceController serviceController;
 
-        public OrderForm()
+        public OrderForm(OrderController orderController, ClientController clientController, ServiceController serviceController)
         {
             InitializeComponent();
-            orderController = new OrderController();
-            clientController = new ClientController();
-            serviceController = new ServiceController();
+            this.orderController = orderController;
+            this.clientController = clientController;
+            this.serviceController = serviceController;
         }
 
         private void OrderFormation_Load(object sender, EventArgs e)
@@ -58,31 +58,47 @@ namespace EducationalPractice
             costValue.Visible = true;
         }
 
-        private void fullNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            string fullName = fullNameTextBox.Text.Trim();
-            ClientAddResult result = clientController.AddIndividualClientIfNotExists(fullName);
-            MessageBox.Show(result.Message);
-        }
-
         private void placeOrderButton_Click(object sender, EventArgs e)
         {
-            string clientType = customerChoiceComboBox.SelectedItem.ToString();
-            Form clientForm = clientController.GetClientForm(clientType);
-            clientForm.Show();
+            string clientType = customerChoiceComboBox.SelectedItem?.ToString();
+            string fullName = fullNameTextBox.Text.Trim();
+            string companyName = companyNameTextBox.Text.Trim();
+
+            var result = orderController.HandleOrder(clientType, fullName, companyName, clientController);
+
+            if (!result.Success)
+            {
+                if (result.Message == "Поле ФИО пустое." || result.Message == "Поле названия компании пустое.")
+                {
+                    MessageBox.Show(result.Message, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                DialogResult dialogResult = MessageBox.Show(
+                    "Клиент не найден в базе данных.\nВы хотите добавить нового клиента?\nДля исправления данных нажмите \"Нет\".",
+                    "Клиент не найден",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Form clientForm = clientController.GetClientForm(clientType);
+                    clientForm.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show(result.Message, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void servicesCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            string item = servicesCheckedListBox.Items[e.Index].ToString();
-            var selectedServices = servicesCheckedListBox.CheckedItems.Cast<string>().ToList();
+            string serviceName = servicesCheckedListBox.Items[e.Index].ToString();
+            bool isSelected = e.NewValue == CheckState.Checked;
 
-            if (e.NewValue == CheckState.Checked)
-                selectedServices.Add(item);
-            else
-                selectedServices.Remove(item);
-
-            costValue.Text = $"{serviceController.CalculateTotalCost(selectedServices)} руб.";
+            decimal totalCost = serviceController.HandleServiceSelection(serviceName, isSelected);
+            costValue.Text = $"{totalCost} руб.";
         }
     }
 }

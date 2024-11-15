@@ -29,8 +29,8 @@ namespace EducationalPractice.Forms
             using (var db = new ApplicationDbContext())
             {
                 // Добавление нового клиента
-                db.Employees.Add(new EmployeeCopy("Менеджер по работе с клиентами", "Иванов Иван Иванович", "Ivanov@namecomp.ru", "2L6KZG", "15:05:2022 13:13:00", "fsafas"));
-                db.SaveChanges();
+                //db.Employees.Add(new EmployeeCopy("Менеджер по работе с клиентами", "Иванов Иван Иванович", "Ivanov@namecomp.ru", "2L6KZG", "15:05:2022 13:13:00", "fsafas"));
+                //db.SaveChanges();
 
                 // Получаем первую строку из таблицы Clients
                 var employee = db.Employees.FirstOrDefault();
