@@ -8,9 +8,21 @@ namespace EducationalPractice.Utils.Extension
 {
     public static class OrderExtensions
     {
-        public static bool IsValidOrderNumber(string orderNumber)
+        /// <summary>
+        /// Проверяет, что строка не является пустой или null.
+        /// </summary>
+        /// <param name="input">Проверяемая строка.</param>
+        /// <param name="fieldName">Название поля (для сообщения об ошибке).</param>
+        /// <returns>True, если строка валидна; иначе False.</returns>
+        public static bool ValidateInput(this string input, string fieldName, out string errorMessage)
         {
-            // Logic to validate order number
+            if (string.IsNullOrEmpty(input))
+            {
+                errorMessage = $"Поле '{fieldName}' пустое.";
+                return false;
+            }
+
+            errorMessage = null;
             return true;
         }
     }

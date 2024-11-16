@@ -1,6 +1,7 @@
 ﻿using EducationalPractice.Models;
 using EducationalPractice.Models.Client;
 using EducationalPractice.Utils;
+using System.Data.SqlClient;
 
 namespace EducationalPractice.Controllers
 {
@@ -50,16 +51,9 @@ namespace EducationalPractice.Controllers
             return [ "ЮЛ", "ФЛ" ];
         }
 
-        public ClientAddResult HandleOrder(string clientType, string fullName, string companyName, ClientController clientController)
+        public bool DoesOrderNumberExist(string orderNumber)
         {
-            if (clientController.IsLegalEntity(clientType))
-            {
-                return clientController.AddCorporateClientIfNotExists(companyName);
-            }
-            else
-            {
-                return clientController.AddIndividualClientIfNotExists(fullName);
-            }
+            return orders.Any(order => order.OrderNumber == orderNumber);
         }
     }
 }

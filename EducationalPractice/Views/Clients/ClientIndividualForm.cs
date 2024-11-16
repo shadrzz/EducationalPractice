@@ -8,7 +8,7 @@ namespace EducationalPractice.Forms
     public partial class ClientIndividualForm : Form
     {
         private List<ClientIndividual> clientIndividuals;
-        public ClientIndividualForm(List<ClientIndividual> clientIndividuals)
+        public ClientIndividualForm()
         {
             InitializeComponent();
             this.clientIndividuals = clientIndividuals;
@@ -18,10 +18,9 @@ namespace EducationalPractice.Forms
         {
             string fullName = fullNameTextBox.Text;
             string clientCode = (clientIndividuals.Select(client => int.Parse(client.ClientCode))
-                .Max() + 1).ToString(); // по идеи должен бд сам сгенерировать как ключ
+                .Max() + 1).ToString();
             string dateOfBirth = dateOfBirthTextBox.Text;
             string passportData = passportDataTextBox.Text;
-            //string phoneNumber = phoneNumberTextBox.Text;
             string address = addressTextBox.Text;
             string email = emailTextBox.Text;
             string password = passwordTextBox.Text;
@@ -73,8 +72,6 @@ namespace EducationalPractice.Forms
                 emptyFields.Add("Адрес");
             if (string.IsNullOrWhiteSpace(emailTextBox.Text))
                 emptyFields.Add("E-mail");
-            if (string.IsNullOrWhiteSpace(phoneNumberTextBox.Text))
-                emptyFields.Add("Номер телефона");
             if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
                 emptyFields.Add("Пароль");
 

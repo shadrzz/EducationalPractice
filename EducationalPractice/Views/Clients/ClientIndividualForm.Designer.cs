@@ -33,8 +33,6 @@
             dateOfBirthTextBox = new TextBox();
             passportDataLabel = new Label();
             passportDataTextBox = new TextBox();
-            phoneNumberLabel = new Label();
-            phoneNumberTextBox = new TextBox();
             fullNameLabel = new Label();
             fullNameTextBox = new TextBox();
             emailLabel = new Label();
@@ -77,7 +75,7 @@
             // 
             passportDataLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             passportDataLabel.AutoSize = true;
-            passportDataLabel.Location = new Point(250, 0);
+            passportDataLabel.Location = new Point(250, 51);
             passportDataLabel.Name = "passportDataLabel";
             passportDataLabel.Size = new Size(221, 15);
             passportDataLabel.TabIndex = 8;
@@ -86,28 +84,10 @@
             // passportDataTextBox
             // 
             passportDataTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            passportDataTextBox.Location = new Point(250, 18);
+            passportDataTextBox.Location = new Point(250, 69);
             passportDataTextBox.Name = "passportDataTextBox";
             passportDataTextBox.Size = new Size(221, 23);
             passportDataTextBox.TabIndex = 4;
-            // 
-            // phoneNumberLabel
-            // 
-            phoneNumberLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            phoneNumberLabel.AutoSize = true;
-            phoneNumberLabel.Location = new Point(250, 51);
-            phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new Size(221, 15);
-            phoneNumberLabel.TabIndex = 10;
-            phoneNumberLabel.Text = "Номер телефона:";
-            // 
-            // phoneNumberTextBox
-            // 
-            phoneNumberTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            phoneNumberTextBox.Location = new Point(250, 69);
-            phoneNumberTextBox.Name = "phoneNumberTextBox";
-            phoneNumberTextBox.Size = new Size(221, 23);
-            phoneNumberTextBox.TabIndex = 5;
             // 
             // fullNameLabel
             // 
@@ -141,7 +121,7 @@
             // 
             addressLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             addressLabel.AutoSize = true;
-            addressLabel.Location = new Point(3, 153);
+            addressLabel.Location = new Point(250, 0);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new Size(221, 15);
             addressLabel.TabIndex = 12;
@@ -150,7 +130,7 @@
             // addressTextBox
             // 
             addressTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            addressTextBox.Location = new Point(3, 171);
+            addressTextBox.Location = new Point(250, 18);
             addressTextBox.Name = "addressTextBox";
             addressTextBox.Size = new Size(221, 23);
             addressTextBox.TabIndex = 3;
@@ -182,12 +162,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(passwordTextBox, 2, 7);
             tableLayoutPanel1.Controls.Add(passwordLabel, 2, 6);
-            tableLayoutPanel1.Controls.Add(phoneNumberTextBox, 2, 4);
-            tableLayoutPanel1.Controls.Add(phoneNumberLabel, 2, 3);
-            tableLayoutPanel1.Controls.Add(addressTextBox, 0, 10);
-            tableLayoutPanel1.Controls.Add(addressLabel, 0, 9);
-            tableLayoutPanel1.Controls.Add(passportDataTextBox, 2, 1);
-            tableLayoutPanel1.Controls.Add(passportDataLabel, 2, 0);
             tableLayoutPanel1.Controls.Add(fullNameTextBox, 0, 1);
             tableLayoutPanel1.Controls.Add(dateOfBirthTextBox, 0, 7);
             tableLayoutPanel1.Controls.Add(dateOfBirthLabel, 0, 6);
@@ -195,6 +169,10 @@
             tableLayoutPanel1.Controls.Add(emailLabel, 0, 3);
             tableLayoutPanel1.Controls.Add(fullNameLabel, 0, 0);
             tableLayoutPanel1.Controls.Add(button1, 0, 12);
+            tableLayoutPanel1.Controls.Add(passportDataTextBox, 2, 4);
+            tableLayoutPanel1.Controls.Add(passportDataLabel, 2, 3);
+            tableLayoutPanel1.Controls.Add(addressLabel, 2, 0);
+            tableLayoutPanel1.Controls.Add(addressTextBox, 2, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(30, 30);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -212,9 +190,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(474, 351);
             tableLayoutPanel1.TabIndex = 25;
             // 
@@ -251,8 +226,6 @@
         private TextBox dateOfBirthTextBox;
         private Label passportDataLabel;
         private TextBox passportDataTextBox;
-        private Label phoneNumberLabel;
-        private TextBox phoneNumberTextBox;
         private Label fullNameLabel;
         private TextBox fullNameTextBox;
         private Label emailLabel;
