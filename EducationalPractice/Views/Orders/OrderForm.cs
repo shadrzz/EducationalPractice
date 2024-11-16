@@ -29,9 +29,6 @@ namespace EducationalPractice
             string[] customerItems = orderController.GetCustomerTypes();
             customerChoiceComboBox.Items.AddRange(customerItems);
             customerChoiceComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            //var serviceNames = serviceController.GetServiceNames();
-            //servicesCheckedListBox.Items.AddRange(serviceNames.ToArray());
         }
 
         private void IdLaboratoryVesselTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -47,17 +44,11 @@ namespace EducationalPractice
             string clientType = customerChoiceComboBox.SelectedItem.ToString();
             bool isLegalEntity = clientController.IsLegalEntity(clientType);
 
-            companyNameLabel.Visible = isLegalEntity;
-            companyNameTextBox.Visible = isLegalEntity;
+            clientDataLabel.Text = isLegalEntity ? "Название компании:" : "ФИО:";
 
-            fullNameLabel.Visible = !isLegalEntity;
-            fullNameTextBox.Visible = !isLegalEntity;
-
+            clientDataLabel.Visible = true;
+            clientDataTextBox.Visible = true;
             placeOrderButton.Visible = true;
-            //servicesLabel.Visible = true;
-            //servicesCheckedListBox.Visible = true;
-            //costLabel.Visible = true;
-            //costValue.Visible = true;
         }
 
         private void placeOrderButton_Click(object sender, EventArgs e)
@@ -84,7 +75,7 @@ namespace EducationalPractice
             bool isLegalEntity = clientController.IsLegalEntity(clientType);
 
             string fieldName = isLegalEntity ? "Название компании" : "ФИО";
-            string clientData = isLegalEntity ? companyNameTextBox.Text.Trim() : fullNameTextBox.Text.Trim();
+            string clientData = clientDataTextBox.Text.Trim();
             bool clientExists = clientController.DoesClientExist(clientData, clientType);
 
             if (!clientData.ValidateInput(fieldName, out string errorMessage))
@@ -93,9 +84,11 @@ namespace EducationalPractice
                 return;
             }
 
+            // Если клиент существует
             if (clientExists)
             {
-                Form serviceForm = new ServiceForm();
+                Form serviceForm = new ServiceForm(serviceController);
+                MessageBox.Show($"Клиент \"{clientData}\" найден в базе данных. Необходимо заполнить поле услуг.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 serviceForm.Show();
                 return;
             }
@@ -104,6 +97,7 @@ namespace EducationalPractice
                 $"Клиент не найден в базе данных.\nВы хотите добавить нового клиента?\nДля исправления данных нажмите \"Нет\".",
                 "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            // Если клиента не существует и пользователь хочет добавить клиента
             if (result == DialogResult.Yes)
             {
                 Form clientForm = clientController.GetClientForm(clientType);
@@ -140,14 +134,7 @@ namespace EducationalPractice
         //    }
         //}
 
-        private void servicesCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            string serviceName = servicesCheckedListBox.Items[e.Index].ToString();
-            bool isSelected = e.NewValue == CheckState.Checked;
 
-            decimal totalCost = serviceController.HandleServiceSelection(serviceName, isSelected);
-            costValue.Text = $"{totalCost} руб.";
-        }
 
         private void idLaboratoryVesselButton_Click(object sender, EventArgs e)
         {
@@ -189,7 +176,23 @@ namespace EducationalPractice
 
         private void idLaboratoryVesselTextBox_TextChanged(object sender, EventArgs e)
         {
+            ClearForm();
+        }
+        public void ClearForm(bool cleanValues = false)
+        {
+            idLaboratoryVesselButton.Visible = true;
+            customerChoiceLabel.Visible = false;
+            customerChoiceComboBox.Visible = false;
+            clientDataLabel.Visible = false;
+            clientDataTextBox.Visible = false;
+            placeOrderButton.Visible = false;
 
+            if (cleanValues)
+            {
+                idLaboratoryVesselTextBox.Clear();
+                customerChoiceComboBox.SelectedIndex = -1;
+                clientDataTextBox.Clear();
+            }
         }
     }
 }

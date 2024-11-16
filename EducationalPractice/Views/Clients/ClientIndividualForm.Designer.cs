@@ -41,14 +41,16 @@
             passwordLabel = new Label();
             passwordTextBox = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
+            clientIdLabel = new Label();
             button1 = new Button();
+            clientIdTextBox = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // emailTextBox
             // 
             emailTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            emailTextBox.Location = new Point(3, 69);
+            emailTextBox.Location = new Point(3, 120);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(221, 23);
             emailTextBox.TabIndex = 1;
@@ -57,7 +59,7 @@
             // 
             dateOfBirthLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dateOfBirthLabel.AutoSize = true;
-            dateOfBirthLabel.Location = new Point(3, 102);
+            dateOfBirthLabel.Location = new Point(3, 153);
             dateOfBirthLabel.Name = "dateOfBirthLabel";
             dateOfBirthLabel.Size = new Size(221, 15);
             dateOfBirthLabel.TabIndex = 6;
@@ -66,7 +68,7 @@
             // dateOfBirthTextBox
             // 
             dateOfBirthTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateOfBirthTextBox.Location = new Point(3, 120);
+            dateOfBirthTextBox.Location = new Point(3, 171);
             dateOfBirthTextBox.Name = "dateOfBirthTextBox";
             dateOfBirthTextBox.Size = new Size(221, 23);
             dateOfBirthTextBox.TabIndex = 2;
@@ -93,7 +95,7 @@
             // 
             fullNameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             fullNameLabel.AutoSize = true;
-            fullNameLabel.Location = new Point(3, 0);
+            fullNameLabel.Location = new Point(3, 51);
             fullNameLabel.Name = "fullNameLabel";
             fullNameLabel.Size = new Size(221, 15);
             fullNameLabel.TabIndex = 4;
@@ -102,7 +104,7 @@
             // fullNameTextBox
             // 
             fullNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            fullNameTextBox.Location = new Point(3, 18);
+            fullNameTextBox.Location = new Point(3, 69);
             fullNameTextBox.Name = "fullNameTextBox";
             fullNameTextBox.Size = new Size(221, 23);
             fullNameTextBox.TabIndex = 0;
@@ -111,7 +113,7 @@
             // 
             emailLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             emailLabel.AutoSize = true;
-            emailLabel.Location = new Point(3, 51);
+            emailLabel.Location = new Point(3, 102);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new Size(221, 15);
             emailLabel.TabIndex = 2;
@@ -160,19 +162,21 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(clientIdLabel, 0, 0);
             tableLayoutPanel1.Controls.Add(passwordTextBox, 2, 7);
             tableLayoutPanel1.Controls.Add(passwordLabel, 2, 6);
-            tableLayoutPanel1.Controls.Add(fullNameTextBox, 0, 1);
-            tableLayoutPanel1.Controls.Add(dateOfBirthTextBox, 0, 7);
-            tableLayoutPanel1.Controls.Add(dateOfBirthLabel, 0, 6);
-            tableLayoutPanel1.Controls.Add(emailTextBox, 0, 4);
-            tableLayoutPanel1.Controls.Add(emailLabel, 0, 3);
-            tableLayoutPanel1.Controls.Add(fullNameLabel, 0, 0);
             tableLayoutPanel1.Controls.Add(button1, 0, 12);
             tableLayoutPanel1.Controls.Add(passportDataTextBox, 2, 4);
             tableLayoutPanel1.Controls.Add(passportDataLabel, 2, 3);
             tableLayoutPanel1.Controls.Add(addressLabel, 2, 0);
             tableLayoutPanel1.Controls.Add(addressTextBox, 2, 1);
+            tableLayoutPanel1.Controls.Add(dateOfBirthTextBox, 0, 10);
+            tableLayoutPanel1.Controls.Add(dateOfBirthLabel, 0, 9);
+            tableLayoutPanel1.Controls.Add(emailTextBox, 0, 7);
+            tableLayoutPanel1.Controls.Add(emailLabel, 0, 6);
+            tableLayoutPanel1.Controls.Add(fullNameTextBox, 0, 4);
+            tableLayoutPanel1.Controls.Add(fullNameLabel, 0, 3);
+            tableLayoutPanel1.Controls.Add(clientIdTextBox, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(30, 30);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -193,6 +197,15 @@
             tableLayoutPanel1.Size = new Size(474, 351);
             tableLayoutPanel1.TabIndex = 25;
             // 
+            // clientIdLabel
+            // 
+            clientIdLabel.AutoSize = true;
+            clientIdLabel.Location = new Point(3, 0);
+            clientIdLabel.Name = "clientIdLabel";
+            clientIdLabel.Size = new Size(55, 15);
+            clientIdLabel.TabIndex = 31;
+            clientIdLabel.Text = "Client ID:";
+            // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -204,6 +217,14 @@
             button1.Text = "Сохранить";
             button1.UseVisualStyleBackColor = true;
             button1.Click += saveButton_Click;
+            // 
+            // clientIdTextBox
+            // 
+            clientIdTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            clientIdTextBox.Location = new Point(3, 18);
+            clientIdTextBox.Name = "clientIdTextBox";
+            clientIdTextBox.Size = new Size(221, 23);
+            clientIdTextBox.TabIndex = 32;
             // 
             // ClientIndividualForm
             // 
@@ -235,5 +256,7 @@
         private TextBox passwordTextBox;
         private TableLayoutPanel tableLayoutPanel1;
         private Button button1;
+        private Label clientIdLabel;
+        private TextBox clientIdTextBox;
     }
 }

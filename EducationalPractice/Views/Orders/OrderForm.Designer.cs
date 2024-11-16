@@ -33,10 +33,8 @@
             idLaboratoryVesselTextBox = new TextBox();
             customerChoiceComboBox = new ComboBox();
             placeOrderButton = new Button();
-            fullNameTextBox = new TextBox();
-            fullNameLabel = new Label();
-            companyNameTextBox = new TextBox();
-            companyNameLabel = new Label();
+            clientDataTextBox = new TextBox();
+            clientDataLabel = new Label();
             idLaboratoryVesselButton = new Button();
             SuspendLayout();
             // 
@@ -83,48 +81,28 @@
             placeOrderButton.Name = "placeOrderButton";
             placeOrderButton.Size = new Size(174, 47);
             placeOrderButton.TabIndex = 100;
-            placeOrderButton.Text = "Оформить заказ";
+            placeOrderButton.Text = "Проверить данные";
             placeOrderButton.UseVisualStyleBackColor = true;
             placeOrderButton.Visible = false;
             placeOrderButton.Click += placeOrderButton_Click;
             // 
-            // fullNameTextBox
+            // clientDataTextBox
             // 
-            fullNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            fullNameTextBox.Location = new Point(239, 48);
-            fullNameTextBox.Name = "fullNameTextBox";
-            fullNameTextBox.Size = new Size(279, 23);
-            fullNameTextBox.TabIndex = 3;
-            fullNameTextBox.Visible = false;
+            clientDataTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            clientDataTextBox.Location = new Point(239, 48);
+            clientDataTextBox.Name = "clientDataTextBox";
+            clientDataTextBox.Size = new Size(279, 23);
+            clientDataTextBox.TabIndex = 3;
+            clientDataTextBox.Visible = false;
             // 
-            // fullNameLabel
+            // clientDataLabel
             // 
-            fullNameLabel.AutoSize = true;
-            fullNameLabel.Location = new Point(238, 30);
-            fullNameLabel.Name = "fullNameLabel";
-            fullNameLabel.Size = new Size(37, 15);
-            fullNameLabel.TabIndex = 6;
-            fullNameLabel.Text = "ФИО:";
-            fullNameLabel.Visible = false;
-            // 
-            // companyNameTextBox
-            // 
-            companyNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            companyNameTextBox.Location = new Point(239, 48);
-            companyNameTextBox.Name = "companyNameTextBox";
-            companyNameTextBox.Size = new Size(279, 23);
-            companyNameTextBox.TabIndex = 2;
-            companyNameTextBox.Visible = false;
-            // 
-            // companyNameLabel
-            // 
-            companyNameLabel.AutoSize = true;
-            companyNameLabel.Location = new Point(239, 30);
-            companyNameLabel.Name = "companyNameLabel";
-            companyNameLabel.Size = new Size(121, 15);
-            companyNameLabel.TabIndex = 8;
-            companyNameLabel.Text = "Название компании:";
-            companyNameLabel.Visible = false;
+            clientDataLabel.AutoSize = true;
+            clientDataLabel.Location = new Point(239, 30);
+            clientDataLabel.Name = "clientDataLabel";
+            clientDataLabel.Size = new Size(0, 15);
+            clientDataLabel.TabIndex = 8;
+            clientDataLabel.Visible = false;
             // 
             // idLaboratoryVesselButton
             // 
@@ -142,10 +120,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(559, 261);
             Controls.Add(idLaboratoryVesselButton);
-            Controls.Add(companyNameTextBox);
-            Controls.Add(companyNameLabel);
-            Controls.Add(fullNameTextBox);
-            Controls.Add(fullNameLabel);
+            Controls.Add(clientDataLabel);
+            Controls.Add(clientDataTextBox);
             Controls.Add(placeOrderButton);
             Controls.Add(customerChoiceComboBox);
             Controls.Add(idLaboratoryVesselTextBox);
@@ -167,10 +143,8 @@
         private TextBox idLaboratoryVesselTextBox;
         private ComboBox customerChoiceComboBox;
         private Button placeOrderButton;
-        private TextBox fullNameTextBox;
-        private Label fullNameLabel;
-        private TextBox companyNameTextBox;
-        private Label companyNameLabel;
+        private TextBox clientDataTextBox;
+        private Label clientDataLabel;
         private Button idLaboratoryVesselButton;
     }
 }
