@@ -41,6 +41,16 @@ namespace EducationalPractice.Controllers
             return individualClients.Any(client => client.FullName == clientData);
         }
 
+        public ClientIndividual GetIndividualClientData(string clientData)
+        {
+            return individualClients.FirstOrDefault(client => client.FullName == clientData);
+        }
+
+        public ClientCorporate GetCorporateClientData(string clientData)
+        {
+            return corporateClients.FirstOrDefault(client => client.CompanyName == clientData);
+        }
+
         public List<ClientCorporate> GetCorporateClients() => corporateClients;
         public List<ClientIndividual> GetIndividualClients() => individualClients;
     }

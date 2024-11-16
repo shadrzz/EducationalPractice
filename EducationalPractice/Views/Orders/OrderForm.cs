@@ -53,24 +53,6 @@ namespace EducationalPractice
 
         private void placeOrderButton_Click(object sender, EventArgs e)
         {
-            //string clientType = customerChoiceComboBox.SelectedItem?.ToString();
-            //bool isLegalEntity = clientController.IsLegalEntity(clientType);
-
-            //string inputValue = isLegalEntity ? companyNameTextBox.Text.Trim() : fullNameTextBox.Text.Trim();
-            //string fieldName = isLegalEntity ? "Название компании" : "ФИО";
-
-            //if (!inputValue.ValidateInput(fieldName, out string errorMessage))
-            //{
-            //    MessageBox.Show(errorMessage, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            //// Логика обработки клиента
-            //ProcessClient(inputValue, clientType, () =>
-            //    isLegalEntity
-            //        ? clientController.GetCorporateClients().FirstOrDefault(c => c.CompanyName == inputValue)
-            //        : clientController.GetIndividualClients().FirstOrDefault(c => c.FullName == inputValue));
-
             string clientType = customerChoiceComboBox.SelectedItem?.ToString();
             bool isLegalEntity = clientController.IsLegalEntity(clientType);
 
@@ -87,7 +69,7 @@ namespace EducationalPractice
             // Если клиент существует
             if (clientExists)
             {
-                Form serviceForm = new ServiceForm(serviceController);
+                Form serviceForm = new ServiceForm(this, serviceController, clientController, clientType, clientData);
                 MessageBox.Show($"Клиент \"{clientData}\" найден в базе данных. Необходимо заполнить поле услуг.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 serviceForm.Show();
                 return;
@@ -104,37 +86,6 @@ namespace EducationalPractice
                 clientForm.Show();
             }
         }
-
-        //private void ProcessClient(string inputValue, string clientType, Func<object> getExistingClient)
-        //{
-        //    var existingClient = getExistingClient();
-        //    if (existingClient == null)
-        //    {
-        //var result = MessageBox.Show(
-        //    $"Клиент не найден в базе данных.\nВы хотите добавить нового клиента?\nДля исправления данных нажмите \"Нет\".",
-        //    "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-        //        if (result == DialogResult.Yes)
-        //        {
-        //            Form clientForm = clientController.GetClientForm(clientType);
-        //clientForm.Show();
-        //        }
-        //    }
-        //    else
-        //    {
-
-        //        if (clientController.IsLegalEntity(clientType))
-        //        {
-
-        //        }
-        //        else
-        //        {
-
-        //        }
-        //    }
-        //}
-
-
 
         private void idLaboratoryVesselButton_Click(object sender, EventArgs e)
         {
