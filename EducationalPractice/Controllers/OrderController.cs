@@ -1,7 +1,5 @@
 ﻿using EducationalPractice.Models;
-using EducationalPractice.Models.Client;
 using EducationalPractice.Utils;
-using System.Data.SqlClient;
 
 namespace EducationalPractice.Controllers
 {
@@ -59,7 +57,7 @@ namespace EducationalPractice.Controllers
 
         public string[] GetCustomerTypes()
         {
-            return [ "ЮЛ", "ФЛ" ];
+            return [ "Юридическое лицо (ЮЛ)", "Физическое лицо (ФЛ)" ];
         }
 
         public bool DoesOrderNumberExist(string orderNumber)

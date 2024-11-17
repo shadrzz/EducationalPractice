@@ -1,6 +1,4 @@
 using EducationalPractice.Controllers;
-using EducationalPractice.Models.Client;
-using EducationalPractice.Utils.Extension;
 using EducationalPractice.Views.Services;
 using System.Text.RegularExpressions;
 
@@ -52,12 +50,11 @@ namespace EducationalPractice
 
         private void idLaboratoryVesselButton_Click(object sender, EventArgs e)
         {
-            string fieldName = "Код лабораторного сосуда";
             string orderNumber = idLaboratoryVesselTextBox.Text;
 
-            if (!orderNumber.ValidateInput(fieldName, out string errorMessage))
+            if (string.IsNullOrEmpty(orderNumber))
             {
-                MessageBox.Show(errorMessage, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Поле 'Код лабораторного сосуда' пустое.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -104,13 +101,12 @@ namespace EducationalPractice
             string clientType = customerChoiceComboBox.SelectedItem?.ToString();
             bool isLegalEntity = clientController.IsLegalEntity(clientType);
 
-            string fieldName = isLegalEntity ? "Название компании" : "ФИО";
             string clientData = clientDataTextBox.Text.Trim();
             bool clientExists = clientController.DoesClientExist(clientData, clientType);
 
-            if (!clientData.ValidateInput(fieldName, out string errorMessage))
+            if (string.IsNullOrEmpty(clientData))
             {
-                MessageBox.Show(errorMessage, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Поле '{(isLegalEntity ? "Название компании" : "ФИО")}' пустое.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

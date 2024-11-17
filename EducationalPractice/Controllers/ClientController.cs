@@ -17,7 +17,7 @@ namespace EducationalPractice.Controllers
 
         public bool IsLegalEntity(string clientType)
         {
-            return clientType == "ЮЛ";
+            return clientType == "Юридическое лицо (ЮЛ)";
         }
 
         public Form GetClientForm(string clientType)
