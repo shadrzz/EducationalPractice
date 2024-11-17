@@ -40,7 +40,7 @@ namespace EducationalPractice.Controllers
 
         public bool IsUniqueVesselNumber(string vesselNumber)
         {
-            return !orders.Any(order => order.OrderNumber.Split('/')[0] == vesselNumber);
+            return !orders.Any(order => order.OrderNumber == vesselNumber);
         }
 
         public string ValidateVesselNumber(string vesselNumber)
