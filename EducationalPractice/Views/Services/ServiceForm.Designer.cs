@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceForm));
             tableLayoutPanel1 = new TableLayoutPanel();
             servicesCheckedListBox = new CheckedListBox();
             costValue = new Label();
             costLabel = new Label();
             servicesLabel = new Label();
-            button1 = new Button();
+            addOrderButton = new Button();
             clientIdLabel = new Label();
             passportDataLabel = new Label();
             dateOfBirthLabel = new Label();
@@ -59,7 +60,7 @@
             tableLayoutPanel1.Controls.Add(servicesCheckedListBox, 0, 0);
             tableLayoutPanel1.Controls.Add(costValue, 1, 1);
             tableLayoutPanel1.Controls.Add(costLabel, 0, 1);
-            tableLayoutPanel1.Location = new Point(324, 48);
+            tableLayoutPanel1.Location = new Point(427, 53);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -104,21 +105,21 @@
             // 
             servicesLabel.Anchor = AnchorStyles.None;
             servicesLabel.AutoSize = true;
-            servicesLabel.Location = new Point(324, 30);
+            servicesLabel.Location = new Point(427, 31);
             servicesLabel.Name = "servicesLabel";
             servicesLabel.Size = new Size(48, 15);
             servicesLabel.TabIndex = 16;
             servicesLabel.Text = "Услуги:";
             // 
-            // button1
+            // addOrderButton
             // 
-            button1.Location = new Point(324, 210);
-            button1.Name = "button1";
-            button1.Size = new Size(279, 48);
-            button1.TabIndex = 103;
-            button1.Text = "Подтвердить";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            addOrderButton.Location = new Point(427, 202);
+            addOrderButton.Name = "addOrderButton";
+            addOrderButton.Size = new Size(279, 48);
+            addOrderButton.TabIndex = 103;
+            addOrderButton.Text = "Подтвердить";
+            addOrderButton.UseVisualStyleBackColor = true;
+            addOrderButton.Click += addOrderButton_Click;
             // 
             // clientIdLabel
             // 
@@ -262,7 +263,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(634, 286);
+            ClientSize = new Size(734, 286);
             Controls.Add(ceoNameLabel);
             Controls.Add(corporateEmailLabel);
             Controls.Add(contactPhoneLabel);
@@ -276,12 +277,13 @@
             Controls.Add(dateOfBirthLabel);
             Controls.Add(passportDataLabel);
             Controls.Add(clientIdLabel);
-            Controls.Add(button1);
+            Controls.Add(addOrderButton);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(servicesLabel);
-            MinimumSize = new Size(650, 325);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(750, 325);
             Name = "ServiceForm";
-            Text = "Form1";
+            Text = "ЗАО «Русская косметика» | Форма заказа услуг";
             Load += ServiceForm_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
@@ -296,7 +298,7 @@
         private Label costValue;
         private Label costLabel;
         private Label servicesLabel;
-        private Button button1;
+        private Button addOrderButton;
         private Label clientIdLabel;
         private Label passportDataLabel;
         private Label dateOfBirthLabel;

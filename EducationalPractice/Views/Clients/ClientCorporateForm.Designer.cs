@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientCorporateForm));
             clientCorporateTableLayoutPanel = new TableLayoutPanel();
             passwordLabel = new Label();
             emailTextBox = new TextBox();
@@ -39,7 +40,7 @@
             ceoNameLabel = new Label();
             contactPersonNameLabel = new Label();
             passwordTextBox = new TextBox();
-            saveButton = new Button();
+            addClientButton = new Button();
             bikTextBox = new TextBox();
             bikLabel = new Label();
             accountNumberTextBox = new TextBox();
@@ -71,7 +72,7 @@
             clientCorporateTableLayoutPanel.Controls.Add(ceoNameLabel, 2, 0);
             clientCorporateTableLayoutPanel.Controls.Add(contactPersonNameLabel, 2, 3);
             clientCorporateTableLayoutPanel.Controls.Add(passwordTextBox, 2, 13);
-            clientCorporateTableLayoutPanel.Controls.Add(saveButton, 0, 18);
+            clientCorporateTableLayoutPanel.Controls.Add(addClientButton, 0, 18);
             clientCorporateTableLayoutPanel.Controls.Add(bikTextBox, 0, 16);
             clientCorporateTableLayoutPanel.Controls.Add(bikLabel, 0, 15);
             clientCorporateTableLayoutPanel.Controls.Add(accountNumberTextBox, 0, 13);
@@ -125,7 +126,7 @@
             emailTextBox.Location = new Point(250, 171);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(221, 23);
-            emailTextBox.TabIndex = 9;
+            emailTextBox.TabIndex = 10;
             // 
             // emailLabel
             // 
@@ -142,7 +143,7 @@
             contactPhoneTextBox.Location = new Point(250, 120);
             contactPhoneTextBox.Name = "contactPhoneTextBox";
             contactPhoneTextBox.Size = new Size(221, 23);
-            contactPhoneTextBox.TabIndex = 8;
+            contactPhoneTextBox.TabIndex = 9;
             // 
             // contactPhoneLabel
             // 
@@ -160,7 +161,7 @@
             contactPersonNameTextBox.Location = new Point(250, 69);
             contactPersonNameTextBox.Name = "contactPersonNameTextBox";
             contactPersonNameTextBox.Size = new Size(221, 23);
-            contactPersonNameTextBox.TabIndex = 7;
+            contactPersonNameTextBox.TabIndex = 8;
             // 
             // ceoNameTextBox
             // 
@@ -168,7 +169,7 @@
             ceoNameTextBox.Location = new Point(250, 18);
             ceoNameTextBox.Name = "ceoNameTextBox";
             ceoNameTextBox.Size = new Size(221, 23);
-            ceoNameTextBox.TabIndex = 6;
+            ceoNameTextBox.TabIndex = 7;
             // 
             // ceoNameLabel
             // 
@@ -196,20 +197,20 @@
             passwordTextBox.Location = new Point(250, 222);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(221, 23);
-            passwordTextBox.TabIndex = 10;
+            passwordTextBox.TabIndex = 11;
             passwordTextBox.UseSystemPasswordChar = true;
             // 
-            // saveButton
+            // addClientButton
             // 
-            saveButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            clientCorporateTableLayoutPanel.SetColumnSpan(saveButton, 3);
-            saveButton.Location = new Point(3, 329);
-            saveButton.Name = "saveButton";
-            saveButton.Size = new Size(468, 69);
-            saveButton.TabIndex = 11;
-            saveButton.Text = "Сохранить";
-            saveButton.UseVisualStyleBackColor = true;
-            saveButton.Click += saveButton_Click;
+            addClientButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            clientCorporateTableLayoutPanel.SetColumnSpan(addClientButton, 3);
+            addClientButton.Location = new Point(3, 329);
+            addClientButton.Name = "addClientButton";
+            addClientButton.Size = new Size(468, 69);
+            addClientButton.TabIndex = 20;
+            addClientButton.Text = "Сохранить";
+            addClientButton.UseVisualStyleBackColor = true;
+            addClientButton.Click += addClientButton_Click;
             // 
             // bikTextBox
             // 
@@ -217,7 +218,7 @@
             bikTextBox.Location = new Point(3, 273);
             bikTextBox.Name = "bikTextBox";
             bikTextBox.Size = new Size(221, 23);
-            bikTextBox.TabIndex = 5;
+            bikTextBox.TabIndex = 6;
             // 
             // bikLabel
             // 
@@ -235,7 +236,7 @@
             accountNumberTextBox.Location = new Point(3, 222);
             accountNumberTextBox.Name = "accountNumberTextBox";
             accountNumberTextBox.Size = new Size(221, 23);
-            accountNumberTextBox.TabIndex = 4;
+            accountNumberTextBox.TabIndex = 5;
             // 
             // accountNumberLabel
             // 
@@ -253,7 +254,7 @@
             innLabelTextBox.Location = new Point(3, 171);
             innLabelTextBox.Name = "innLabelTextBox";
             innLabelTextBox.Size = new Size(221, 23);
-            innLabelTextBox.TabIndex = 3;
+            innLabelTextBox.TabIndex = 4;
             // 
             // innLabel
             // 
@@ -270,7 +271,7 @@
             addressTextBox.Location = new Point(3, 120);
             addressTextBox.Name = "addressTextBox";
             addressTextBox.Size = new Size(221, 23);
-            addressTextBox.TabIndex = 2;
+            addressTextBox.TabIndex = 3;
             // 
             // addressLabel
             // 
@@ -288,7 +289,7 @@
             companyNameTextBox.Location = new Point(3, 69);
             companyNameTextBox.Name = "companyNameTextBox";
             companyNameTextBox.Size = new Size(221, 23);
-            companyNameTextBox.TabIndex = 0;
+            companyNameTextBox.TabIndex = 2;
             // 
             // companyNameLabel
             // 
@@ -314,7 +315,7 @@
             clientIdTextBox.Location = new Point(3, 18);
             clientIdTextBox.Name = "clientIdTextBox";
             clientIdTextBox.Size = new Size(221, 23);
-            clientIdTextBox.TabIndex = 30;
+            clientIdTextBox.TabIndex = 1;
             // 
             // ClientCorporateForm
             // 
@@ -322,10 +323,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(534, 461);
             Controls.Add(clientCorporateTableLayoutPanel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(550, 450);
             Name = "ClientCorporateForm";
             Padding = new Padding(30);
-            Text = "Добавление нового клиента";
+            Text = "ЗАО «Русская косметика» | Добавление юридического лица";
             clientCorporateTableLayoutPanel.ResumeLayout(false);
             clientCorporateTableLayoutPanel.PerformLayout();
             ResumeLayout(false);
@@ -353,7 +355,7 @@
         private TextBox accountNumberTextBox;
         private TextBox passwordTextBox;
         private TextBox bikTextBox;
-        private Button saveButton;
+        private Button addClientButton;
         private Label companyNameLabel;
         private Label clientIdLabel;
         private TextBox clientIdTextBox;

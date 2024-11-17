@@ -2,7 +2,7 @@
 {
     public class Employee
     {
-        public string EmployeeCode { get; set; }
+        public string EmployeeId { get; set; }
         public string Position { get; set; }
         public string FullName { get; set; }
         public string Login { get; set; }
@@ -10,9 +10,9 @@
         public List<int> Services { get; set; }
         public string LastLogin { get; set; }
 
-        public Employee(string employeeCode, string position, string fullName, string login, string password, List<int> services, string lastLogin)
+        public Employee(string employeeId, string position, string fullName, string login, string password, List<int> services, string lastLogin)
         {
-            EmployeeCode = employeeCode;
+            EmployeeId = employeeId;
             Position = position;
             FullName = fullName;
             Login = login;

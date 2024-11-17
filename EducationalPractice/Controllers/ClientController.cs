@@ -24,11 +24,11 @@ namespace EducationalPractice.Controllers
         {
             if (IsLegalEntity(clientType))
             {
-                return new ClientCorporateForm();
+                return new ClientCorporateForm(this);
             }
             else
             {
-                return new ClientIndividualForm();
+                return new ClientIndividualForm(this);
             }
         }
 
@@ -39,6 +39,16 @@ namespace EducationalPractice.Controllers
                 return corporateClients.Any(client => client.CompanyName == clientData);
             }
             return individualClients.Any(client => client.FullName == clientData);
+        }
+
+        public void AddIndividualClient(ClientIndividual client)
+        {
+            individualClients.Add(client);
+        }
+
+        public void AddCorporateClient(ClientCorporate client)
+        {
+            corporateClients.Add(client);
         }
 
         public ClientIndividual GetIndividualClientData(string clientData)

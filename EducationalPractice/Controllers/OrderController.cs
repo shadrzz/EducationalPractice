@@ -18,8 +18,19 @@ namespace EducationalPractice.Controllers
 
         public string GetNextOrderNumber()
         {
-            var lastOrderNumber = orders.Select(order => ParseOrderNumber(order.OrderNumber)).Max();
-            return (lastOrderNumber + 1).ToString();
+            var lastOrderNumber = orders.Select(order => order.OrderNumber).Max();
+
+            if (!string.IsNullOrEmpty(lastOrderNumber))
+            {
+                var parts = lastOrderNumber.Split('/');
+                if (parts.Length == 2 && int.TryParse(parts[1], out int lastNumber))
+                {
+                    // Увеличиваем второй элемент
+                    return $"{parts[0]}/{lastNumber + 1}";
+                }
+            }
+
+            return "00000000/0000000";
         }
 
         private int ParseOrderNumber(string orderNumber)
@@ -54,6 +65,16 @@ namespace EducationalPractice.Controllers
         public bool DoesOrderNumberExist(string orderNumber)
         {
             return orders.Any(order => order.OrderNumber == orderNumber);
+        }
+
+        public void AddOrder(Order order)
+        {
+            orders.Add(order);
+        }
+
+        public int GetNextOrderId()
+        {
+            return orders.Select(order => order.Id).Max() + 1;
         }
     }
 }

@@ -39,52 +39,15 @@ namespace EducationalPractice
             }
         }
 
-        private void customerChoiceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private bool IsValidVesselCodeFormat(string code)
         {
-            string clientType = customerChoiceComboBox.SelectedItem.ToString();
-            bool isLegalEntity = clientController.IsLegalEntity(clientType);
-
-            clientDataLabel.Text = isLegalEntity ? "Название компании:" : "ФИО:";
-
-            clientDataLabel.Visible = true;
-            clientDataTextBox.Visible = true;
-            placeOrderButton.Visible = true;
+            string pattern = @"^\d+/[0-9]+$";
+            return Regex.IsMatch(code, pattern);
         }
 
-        private void placeOrderButton_Click(object sender, EventArgs e)
+        private void idLaboratoryVesselTextBox_TextChanged(object sender, EventArgs e)
         {
-            string clientType = customerChoiceComboBox.SelectedItem?.ToString();
-            bool isLegalEntity = clientController.IsLegalEntity(clientType);
-
-            string fieldName = isLegalEntity ? "Название компании" : "ФИО";
-            string clientData = clientDataTextBox.Text.Trim();
-            bool clientExists = clientController.DoesClientExist(clientData, clientType);
-
-            if (!clientData.ValidateInput(fieldName, out string errorMessage))
-            {
-                MessageBox.Show(errorMessage, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Если клиент существует
-            if (clientExists)
-            {
-                Form serviceForm = new ServiceForm(this, serviceController, clientController, clientType, clientData);
-                MessageBox.Show($"Клиент \"{clientData}\" найден в базе данных. Необходимо заполнить поле услуг.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                serviceForm.Show();
-                return;
-            }
-
-            var result = MessageBox.Show(
-                $"Клиент не найден в базе данных.\nВы хотите добавить нового клиента?\nДля исправления данных нажмите \"Нет\".",
-                "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            // Если клиента не существует и пользователь хочет добавить клиента
-            if (result == DialogResult.Yes)
-            {
-                Form clientForm = clientController.GetClientForm(clientType);
-                clientForm.Show();
-            }
+            ClearForm();
         }
 
         private void idLaboratoryVesselButton_Click(object sender, EventArgs e)
@@ -119,16 +82,59 @@ namespace EducationalPractice
             customerChoiceComboBox.Visible = true;
         }
 
-        private bool IsValidVesselCodeFormat(string code)
+        private void customerChoiceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string pattern = @"^\d+/[0-9]+$";
-            return Regex.IsMatch(code, pattern);
+            if (customerChoiceComboBox.SelectedItem != null)
+            {
+                string clientType = customerChoiceComboBox.SelectedItem.ToString();
+                bool isLegalEntity = clientController.IsLegalEntity(clientType);
+
+                clientDataLabel.Text = isLegalEntity ? "Название компании:" : "ФИО:";
+
+                clientDataLabel.Visible = true;
+                clientDataTextBox.Visible = true;
+                placeOrderButton.Visible = true;
+            }
         }
 
-        private void idLaboratoryVesselTextBox_TextChanged(object sender, EventArgs e)
+        private void placeOrderButton_Click(object sender, EventArgs e)
         {
-            ClearForm();
+            string orderNumber = idLaboratoryVesselTextBox.Text;
+
+            string clientType = customerChoiceComboBox.SelectedItem?.ToString();
+            bool isLegalEntity = clientController.IsLegalEntity(clientType);
+
+            string fieldName = isLegalEntity ? "Название компании" : "ФИО";
+            string clientData = clientDataTextBox.Text.Trim();
+            bool clientExists = clientController.DoesClientExist(clientData, clientType);
+
+            if (!clientData.ValidateInput(fieldName, out string errorMessage))
+            {
+                MessageBox.Show(errorMessage, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Если клиент существует
+            if (clientExists)
+            {
+                Form serviceForm = new ServiceForm(this, orderController, serviceController, clientController, orderNumber, clientType, clientData);
+                MessageBox.Show($"Клиент \"{clientData}\" найден в базе данных. Необходимо заполнить поле услуг.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                serviceForm.Show();
+                return;
+            }
+
+            var result = MessageBox.Show(
+                $"Клиент не найден в базе данных.\nВы хотите добавить нового клиента?\nДля исправления данных нажмите \"Нет\".",
+                "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Если клиента не существует и пользователь хочет добавить клиента
+            if (result == DialogResult.Yes)
+            {
+                Form clientForm = clientController.GetClientForm(clientType);
+                clientForm.Show();
+            }
         }
+
         public void ClearForm(bool cleanValues = false)
         {
             idLaboratoryVesselButton.Visible = true;

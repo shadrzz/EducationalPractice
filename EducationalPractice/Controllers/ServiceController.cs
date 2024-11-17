@@ -146,6 +146,11 @@ namespace EducationalPractice.Controllers
             return services.Select(s => s.Name).ToList();
         }
 
+        public void ClearSelectedServices()
+        {
+            selectedServices.Clear();
+        }
+
         public void UpdateSelectedService(int serviceId, bool isSelected)
         {
             var service = services.FirstOrDefault(s => s.Id == serviceId);
@@ -163,14 +168,24 @@ namespace EducationalPractice.Controllers
             }
         }
 
+        public int GetSelectedServiceCount()
+        {
+            return selectedServices.Count;
+        }
+
         public string GetSelectedServiceNames()
         {
             return string.Join(", ", selectedServices.Select(s => s.Name));
         }
 
+        public string GetSelectedServiceIds()
+        {
+            return string.Join(", ", selectedServices.Select(s => s.Id));
+        }
+
         public decimal GetTotalCost()
         {
-            return selectedServices.Sum(s => s.Cost);
+            return selectedServices.Sum(s => s.CostForRussianCosmetics);
         }
 
         public string GetTotalTime()

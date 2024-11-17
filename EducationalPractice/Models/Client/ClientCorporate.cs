@@ -2,7 +2,7 @@
 {
     public class ClientCorporate
     {
-        public string ClientCode { get; set; }
+        public string ClientId { get; set; }
         public string CompanyName { get; set; }
         public string Address { get; set; }
         public string INN { get; set; }
@@ -16,7 +16,7 @@
 
         public ClientCorporate(string companyName, string address, string inn, string accountNumber, string bik,
                       string ceoName, string contactPersonName, string contactPhone, string email,
-                      string password, string clientCode)
+                      string password, string clientId)
         {
             CompanyName = companyName;
             Address = address;
@@ -28,7 +28,7 @@
             ContactPhone = contactPhone;
             Email = email;
             Password = password;
-            ClientCode = clientCode;
+            ClientId = clientId;
         }
     }
 }

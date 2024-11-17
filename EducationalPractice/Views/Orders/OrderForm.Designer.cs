@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             idLaboratoryVesselLabel = new Label();
             customerChoiceLabel = new Label();
             idLaboratoryVesselTextBox = new TextBox();
@@ -127,10 +128,11 @@
             Controls.Add(idLaboratoryVesselTextBox);
             Controls.Add(customerChoiceLabel);
             Controls.Add(idLaboratoryVesselLabel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(12, 50);
             MinimumSize = new Size(575, 300);
             Name = "OrderForm";
-            Text = "Формирование заказа";
+            Text = "ЗАО «Русская косметика» | Формирование заказа";
             Load += OrderFormation_Load;
             ResumeLayout(false);
             PerformLayout();
