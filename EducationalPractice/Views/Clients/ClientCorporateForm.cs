@@ -1,5 +1,4 @@
 ﻿using EducationalPractice.Controllers;
-using EducationalPractice.Models.Client;
 
 namespace EducationalPractice.Forms
 {
@@ -16,11 +15,11 @@ namespace EducationalPractice.Forms
 
         private void addClientButton_Click(object sender, EventArgs e)
         {
-            string clientId = clientIdTextBox.Text;
+            int clientId = int.Parse(clientIdTextBox.Text);
             string companyName = companyNameTextBox.Text;
             string address = addressTextBox.Text;
             string inn = innLabelTextBox.Text;
-            string accountNumber = accountNumberTextBox.Text;
+            string bankAccount = accountNumberTextBox.Text;
             string bik = bikTextBox.Text;
             string ceoName = ceoNameTextBox.Text;
             string contactPersonName = contactPersonNameTextBox.Text;
@@ -28,16 +27,15 @@ namespace EducationalPractice.Forms
             string email = emailTextBox.Text;
             string password = passwordTextBox.Text;
 
-            var client = new ClientCorporate(companyName, address, inn, accountNumber, bik, ceoName, contactPersonName, contactPhone, email, password, clientId);
+            var client = new ClientsCorporate(clientId, companyName, address, inn, bankAccount, bik, ceoName, contactPhone, email, password);
 
-            if (string.IsNullOrWhiteSpace(client.ClientId) ||
+            if (string.IsNullOrWhiteSpace(clientIdTextBox.Text) ||
                 string.IsNullOrWhiteSpace(client.CompanyName) ||
                 string.IsNullOrWhiteSpace(client.Address) ||
-                string.IsNullOrWhiteSpace(client.INN) ||
-                string.IsNullOrWhiteSpace(client.AccountNumber) ||
-                string.IsNullOrWhiteSpace(client.BIK) ||
-                string.IsNullOrWhiteSpace(client.CEOName) ||
-                string.IsNullOrWhiteSpace(client.ContactPersonName) ||
+                string.IsNullOrWhiteSpace(client.Inn) ||
+                string.IsNullOrWhiteSpace(client.BankAccount) ||
+                string.IsNullOrWhiteSpace(client.Bic) ||
+                string.IsNullOrWhiteSpace(client.Ceoname) ||
                 string.IsNullOrWhiteSpace(client.ContactPhone) ||
                 string.IsNullOrWhiteSpace(client.Email) ||
                 string.IsNullOrWhiteSpace(client.Password)

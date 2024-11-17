@@ -67,7 +67,6 @@
 //}
 
 using EducationalPractice.Forms;
-using EducationalPractice.Models.Client;
 using EducationalPractice.Utils;
 
 namespace EducationalPractice.Controllers
@@ -102,43 +101,43 @@ namespace EducationalPractice.Controllers
         {
             if (IsLegalEntity(clientType))
             {
-                return _context.ClientsCorporate.Any(client => client.CompanyName == clientData);
+                return _context.ClientsCorporates.Any(client => client.CompanyName == clientData);
             }
-            return _context.ClientsIndividual.Any(client => client.FullName == clientData);
+            return _context.ClientsIndividuals.Any(client => client.FullName == clientData);
         }
 
-        public void AddIndividualClient(ClientIndividual client)
+        public void AddIndividualClient(ClientsIndividual client)
         {
-            _context.ClientsIndividual.Add(client);
+            _context.ClientsIndividuals.Add(client);
             _context.SaveChanges();
         }
 
-        public void AddCorporateClient(ClientCorporate client)
+        public void AddCorporateClient(ClientsCorporate client)
         {
-            _context.ClientsCorporate.Add(client);
+            _context.ClientsCorporates.Add(client);
             _context.SaveChanges();
         }
 
-        public ClientIndividual GetIndividualClientData(string clientData)
+        public ClientsIndividual GetIndividualClientData(string clientData)
         {
-            return _context.ClientsIndividual
+            return _context.ClientsIndividuals
                            .FirstOrDefault(client => client.FullName == clientData);
         }
 
-        public ClientCorporate GetCorporateClientData(string clientData)
+        public ClientsCorporate GetCorporateClientData(string clientData)
         {
-            return _context.ClientsCorporate
+            return _context.ClientsCorporates
                            .FirstOrDefault(client => client.CompanyName == clientData);
         }
 
-        public List<ClientCorporate> GetCorporateClients()
+        public List<ClientsCorporate> GetCorporateClients()
         {
-            return _context.ClientsCorporate.ToList();
+            return _context.ClientsCorporates.ToList();
         }
 
-        public List<ClientIndividual> GetIndividualClients()
+        public List<ClientsIndividual> GetIndividualClients()
         {
-            return _context.ClientsIndividual.ToList();
+            return _context.ClientsIndividuals.ToList();
         }
     }
 }

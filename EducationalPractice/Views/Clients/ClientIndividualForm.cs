@@ -1,5 +1,4 @@
 ﻿using EducationalPractice.Controllers;
-using EducationalPractice.Models.Client;
 
 namespace EducationalPractice.Forms
 {
@@ -23,12 +22,12 @@ namespace EducationalPractice.Forms
             string email = emailTextBox.Text;
             string password = passwordTextBox.Text;
 
-            var client = new ClientIndividual(fullName, clientId, passportData, dateOfBirth, address, email, password);
+            var client = new ClientsIndividual(clientId, fullName, passportData, dateOfBirth, address, email, password);
 
             if (string.IsNullOrWhiteSpace(client.ClientId) ||
                 string.IsNullOrWhiteSpace(client.FullName) ||
-                string.IsNullOrWhiteSpace(client.PassportData) ||
-                string.IsNullOrWhiteSpace(client.DateOfBirth) ||
+                string.IsNullOrWhiteSpace(client.PassportDate) ||
+                string.IsNullOrWhiteSpace(client.BirthDate) ||
                 string.IsNullOrWhiteSpace(client.Address) ||
                 string.IsNullOrWhiteSpace(client.Email) ||
                 string.IsNullOrWhiteSpace(client.Password))

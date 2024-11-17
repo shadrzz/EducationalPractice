@@ -1,27 +1,23 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace EducationalPractice.Models
+namespace EducationalPractice.Models;
+
+public partial class Employee
 {
-    public class Employee
-    {
-        [Key]
-        public string EmployeeId { get; set; }
-        public string Position { get; set; }
-        public string FullName { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public List<int> Services { get; set; }
-        public string LastLogin { get; set; }
+    public string EmployeeId { get; set; } = null!;
 
-        public Employee(string employeeId, string position, string fullName, string login, string password, List<int> services, string lastLogin)
-        {
-            EmployeeId = employeeId;
-            Position = position;
-            FullName = fullName;
-            Login = login;
-            Password = password;
-            Services = services ?? new List<int>();
-            LastLogin = lastLogin;
-        }
-    }
+    public string? Position { get; set; }
+
+    public string? FullName { get; set; }
+
+    public string? Login { get; set; }
+
+    public string? Password { get; set; }
+
+    public string? LastLogin { get; set; }
+
+    public string? Services { get; set; }
+
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

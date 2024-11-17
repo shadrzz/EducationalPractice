@@ -18,7 +18,7 @@ namespace EducationalPractice.Controllers
 
         public List<string> GetServiceNames()
         {
-            return services.Select(s => s.Name).ToList();
+            return services.Select(s => s.ServiceName).ToList();
         }
 
         public void ClearSelectedServices()
@@ -50,7 +50,7 @@ namespace EducationalPractice.Controllers
 
         public string GetSelectedServiceNames()
         {
-            return string.Join(", ", selectedServices.Select(s => s.Name));
+            return string.Join(", ", selectedServices.Select(s => s.ServiceName));
         }
 
         public string GetSelectedServiceIds()
@@ -60,7 +60,7 @@ namespace EducationalPractice.Controllers
 
         public decimal GetTotalCost()
         {
-            return selectedServices.Sum(s => s.CostForRussianCosmetics);
+            return selectedServices.Sum(s => int.Parse(s.RusCosmeticsPrice));
         }
 
         public string GetTotalTime()

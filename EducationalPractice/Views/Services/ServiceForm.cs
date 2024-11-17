@@ -1,6 +1,5 @@
 ﻿using EducationalPractice.Controllers;
 using EducationalPractice.Models;
-using EducationalPractice.Models.Client;
 
 namespace EducationalPractice.Views.Services
 {
@@ -36,8 +35,8 @@ namespace EducationalPractice.Views.Services
             var serviceNames = serviceController.GetServiceNames();
             servicesCheckedListBox.Items.AddRange(serviceNames.ToArray());
 
-            ClientCorporate clientCorporate = clientController.GetCorporateClientData(clientData);
-            ClientIndividual clientIndividual = clientController.GetIndividualClientData(clientData);
+            ClientsCorporate clientCorporate = clientController.GetCorporateClientData(clientData);
+            ClientsIndividual clientIndividual = clientController.GetIndividualClientData(clientData);
 
             companyNameLabel.Visible = isLegalEntity;
             corporateAddressLabel.Visible = isLegalEntity;
@@ -59,17 +58,17 @@ namespace EducationalPractice.Views.Services
             {
                 companyNameLabel.Text = $"Название компании: {clientCorporate.CompanyName}";
                 corporateAddressLabel.Text = $"Адрес: {clientCorporate.Address}";
-                innLabel.Text = $"ИНН: {clientCorporate.INN}";
-                accountNumberLabel.Text = $"Расчётный счёт: {clientCorporate.AccountNumber}";
-                bikLabel.Text = $"БИК: {clientCorporate.BIK}";
-                ceoNameLabel.Text = $"ФИО руководителя: {clientCorporate.CEOName}";
+                innLabel.Text = $"ИНН: {clientCorporate.Inn}";
+                accountNumberLabel.Text = $"Расчётный счёт: {clientCorporate.BankAccount}";
+                bikLabel.Text = $"БИК: {clientCorporate.Bic}";
+                ceoNameLabel.Text = $"ФИО руководителя: {clientCorporate.Ceoname}";
                 contactPhoneLabel.Text = $"Номер телефона: {clientCorporate.ContactPhone}";
                 corporateEmailLabel.Text = $"Электронная почта: {clientCorporate.Email}";
                 return;
             }
 
-            passportDataLabel.Text = $"Серия и номер паспорта: {clientIndividual.PassportData}";
-            dateOfBirthLabel.Text = $"Дата рождения: {clientIndividual.DateOfBirth}";
+            passportDataLabel.Text = $"Серия и номер паспорта: {clientIndividual.PassportDate}";
+            dateOfBirthLabel.Text = $"Дата рождения: {clientIndividual.BirthDate}";
             individualAddressLabel.Text = $"Адрес: {clientIndividual.Address}";
             individualEmailLabel.Text = $"Электронная почта: {clientIndividual.Email}";
         }
@@ -100,12 +99,12 @@ namespace EducationalPractice.Views.Services
 
             bool isLegalEntity = clientController.IsLegalEntity(clientType);
 
-            ClientCorporate clientCorporate = clientController.GetCorporateClientData(clientData);
-            ClientIndividual clientIndividual = clientController.GetIndividualClientData(clientData);
+            ClientsCorporate clientCorporate = clientController.GetCorporateClientData(clientData);
+            ClientsIndividual clientIndividual = clientController.GetIndividualClientData(clientData);
 
             int orderId = orderController.GetNextOrderId();
             string creationDate = DateTime.Now.ToString("d/M/yyyy");
-            string clientId = isLegalEntity ? clientCorporate.ClientId : clientIndividual.ClientId;
+            string clientId = isLegalEntity ? clientCorporate.ClientId.ToString() : clientIndividual.ClientId;
             string services = serviceController.GetSelectedServiceIds();
             string status = "Новая";
             string? closingDate = null;

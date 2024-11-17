@@ -18,4 +18,16 @@ public partial class ClientsIndividual
     public string? Email { get; set; }
 
     public string? Password { get; set; }
+
+    public ClientsIndividual() { }
+    public ClientsIndividual(string clientId, string fullName, string passportDate, string dateOfBirth, string address, string email, string password)
+    {
+        ClientId = clientId;
+        FullName = fullName;
+        PassportDate = passportDate;
+        BirthDate = dateOfBirth;
+        Address = address;
+        Email = email;
+        Password = password;
+    }
 }

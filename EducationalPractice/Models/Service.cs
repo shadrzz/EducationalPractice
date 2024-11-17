@@ -1,27 +1,32 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace EducationalPractice.Models
+namespace EducationalPractice.Models;
+
+public partial class Service
 {
-    public class Service
-    {
-        [Key]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string ServiceCode { get; set; }
-        public string ExecutionTime { get; set; }
-        public string AverageDeviation { get; set; }
-        public decimal Cost { get; set; }
-        public decimal CostForRussianCosmetics { get; set; }
+    public int Id { get; set; }
 
-        public Service(int id, string name, string serviceCode, string executionTime, string averageDeviation, decimal cost, decimal costForRussianCosmetics)
-        {
-            Id = id;
-            Name = name;
-            ServiceCode = serviceCode;
-            ExecutionTime = executionTime;
-            AverageDeviation = averageDeviation;
-            Cost = cost;
-            CostForRussianCosmetics = costForRussianCosmetics;
-        }
+    public string? ServiceName { get; set; }
+
+    public string? ServiceCode { get; set; }
+
+    public string? ExecutionTime { get; set; }
+
+    public string? AverageDeviation { get; set; }
+
+    public string? Price { get; set; }
+
+    public string? RusCosmeticsPrice { get; set; }
+
+    public Service(int id, string serviceName, string serviceCode, string executionTime, string averageDeviation, string price, string rusCosmeticsPrice)
+    {
+        Id = id;
+        ServiceName = serviceName;
+        ServiceCode = serviceCode;
+        ExecutionTime = executionTime;
+        AverageDeviation = averageDeviation;
+        Price = price;
+        RusCosmeticsPrice = rusCosmeticsPrice;
     }
 }
