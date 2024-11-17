@@ -1,4 +1,5 @@
 using EducationalPractice.Controllers;
+using EducationalPractice.Utils;
 
 namespace EducationalPractice
 {

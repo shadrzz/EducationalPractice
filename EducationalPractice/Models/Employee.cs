@@ -1,7 +1,10 @@
-﻿namespace EducationalPractice.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EducationalPractice.Models
 {
     public class Employee
     {
+        [Key]
         public string EmployeeId { get; set; }
         public string Position { get; set; }
         public string FullName { get; set; }

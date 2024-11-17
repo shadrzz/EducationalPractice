@@ -1,7 +1,10 @@
-﻿namespace EducationalPractice.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EducationalPractice.Models
 {
     public class Order
     {
+        [Key]
         public int Id { get; set; }
         public string OrderNumber { get; set; }
         public string CreationDate { get; set; }

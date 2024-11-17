@@ -1,7 +1,10 @@
-﻿namespace EducationalPractice.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EducationalPractice.Models
 {
     public class Service
     {
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string ServiceCode { get; set; }

@@ -1,7 +1,10 @@
-﻿namespace EducationalPractice.Models.Client
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EducationalPractice.Models.Client
 {
     public class ClientCorporate
     {
+        [Key]
         public string ClientId { get; set; }
         public string CompanyName { get; set; }
         public string Address { get; set; }
@@ -14,9 +17,11 @@
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public ClientCorporate(string companyName, string address, string inn, string accountNumber, string bik,
+        public ClientCorporate() { }
+
+        public ClientCorporate(string clientId, string companyName, string address, string inn, string accountNumber, string bik,
                       string ceoName, string contactPersonName, string contactPhone, string email,
-                      string password, string clientId)
+                      string password)
         {
             CompanyName = companyName;
             Address = address;
