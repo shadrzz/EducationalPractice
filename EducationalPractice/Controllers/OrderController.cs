@@ -1,59 +1,4 @@
-﻿//using EducationalPractice.Utils;
-
-//namespace EducationalPractice.Controllers
-//{
-//    public class OrderController
-//    {
-//        private List<Order> orders;
-
-//        public OrderController()
-//        {
-//            orders = DataInitializer.GetOrders();
-//        }
-
-//        public string GetNextOrderNumber()
-//        {
-//            var lastOrderNumber = orders.Select(order => order.OrderNumber).Max();
-
-//            if (!string.IsNullOrEmpty(lastOrderNumber))
-//            {
-//                var parts = lastOrderNumber.Split('/');
-//                if (parts.Length == 2 && int.TryParse(parts[1], out int lastNumber))
-//                {
-//                    // Увеличиваем второй элемент
-//                    return $"{parts[0]}/{lastNumber + 1}";
-//                }
-//            }
-
-//            return "00000000/0000000";
-//        }
-
-//        public string[] GetCustomerTypes()
-//        {
-//            return ["Юридическое лицо (ЮЛ)", "Физическое лицо (ФЛ)"];
-//        }
-
-//        public bool DoesOrderNumberExist(string orderNumber)
-//        {
-//            return orders.Any(order => order.OrderNumber == orderNumber);
-//        }
-
-//        public void AddOrder(Order order)
-//        {
-//            orders.Add(order);
-//        }
-
-//        public int GetNextOrderId()
-//        {
-//            return orders.Select(order => order.Id).Max() + 1;
-//        }
-//    }
-//}
-
-using EducationalPractice.Models;
-using EducationalPractice.Utils;
-using System.Collections.Generic;
-using System.Linq;
+﻿using EducationalPractice.Utils;
 
 namespace EducationalPractice.Controllers
 {
@@ -88,7 +33,7 @@ namespace EducationalPractice.Controllers
 
         public string[] GetCustomerTypes()
         {
-            return new[] { "Юридическое лицо (ЮЛ)", "Физическое лицо (ФЛ)" };
+            return ["Юридическое лицо (ЮЛ)", "Физическое лицо (ФЛ)"];
         }
 
         public bool DoesOrderNumberExist(string orderNumber)
@@ -105,10 +50,10 @@ namespace EducationalPractice.Controllers
         public int GetNextOrderId()
         {
             return _context.Orders
-                   .AsEnumerable() // Переключаемся на обработку данных на стороне клиента
+                   .AsEnumerable()
                    .Select(order => order.Id)
-                   .DefaultIfEmpty(0) // Обработка случая, когда таблица пуста
-                   .Max() + 1;        // Получаем следующий Id
+                   .DefaultIfEmpty(0)
+                   .Max() + 1;
         }
     }
 }

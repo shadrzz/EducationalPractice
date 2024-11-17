@@ -280,6 +280,7 @@
             Controls.Add(addOrderButton);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(servicesLabel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(750, 325);
             Name = "ServiceForm";

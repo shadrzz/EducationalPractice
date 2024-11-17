@@ -92,7 +92,7 @@
             clientDataTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             clientDataTextBox.Location = new Point(239, 48);
             clientDataTextBox.Name = "clientDataTextBox";
-            clientDataTextBox.Size = new Size(279, 23);
+            clientDataTextBox.Size = new Size(295, 23);
             clientDataTextBox.TabIndex = 3;
             clientDataTextBox.Visible = false;
             // 
@@ -128,6 +128,7 @@
             Controls.Add(idLaboratoryVesselTextBox);
             Controls.Add(customerChoiceLabel);
             Controls.Add(idLaboratoryVesselLabel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(12, 50);
             MinimumSize = new Size(575, 300);

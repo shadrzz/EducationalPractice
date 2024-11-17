@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace EducationalPractice;
+﻿namespace EducationalPractice;
 
 public partial class ClientsIndividual
 {

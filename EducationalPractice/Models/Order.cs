@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using EducationalPractice.Models;
+﻿using EducationalPractice.Models;
 
 namespace EducationalPractice;
 
