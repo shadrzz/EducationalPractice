@@ -1,22 +1,77 @@
-﻿using EducationalPractice.Models;
+﻿//using EducationalPractice.Utils;
+
+//namespace EducationalPractice.Controllers
+//{
+//    public class OrderController
+//    {
+//        private List<Order> orders;
+
+//        public OrderController()
+//        {
+//            orders = DataInitializer.GetOrders();
+//        }
+
+//        public string GetNextOrderNumber()
+//        {
+//            var lastOrderNumber = orders.Select(order => order.OrderNumber).Max();
+
+//            if (!string.IsNullOrEmpty(lastOrderNumber))
+//            {
+//                var parts = lastOrderNumber.Split('/');
+//                if (parts.Length == 2 && int.TryParse(parts[1], out int lastNumber))
+//                {
+//                    // Увеличиваем второй элемент
+//                    return $"{parts[0]}/{lastNumber + 1}";
+//                }
+//            }
+
+//            return "00000000/0000000";
+//        }
+
+//        public string[] GetCustomerTypes()
+//        {
+//            return ["Юридическое лицо (ЮЛ)", "Физическое лицо (ФЛ)"];
+//        }
+
+//        public bool DoesOrderNumberExist(string orderNumber)
+//        {
+//            return orders.Any(order => order.OrderNumber == orderNumber);
+//        }
+
+//        public void AddOrder(Order order)
+//        {
+//            orders.Add(order);
+//        }
+
+//        public int GetNextOrderId()
+//        {
+//            return orders.Select(order => order.Id).Max() + 1;
+//        }
+//    }
+//}
+
+using EducationalPractice.Models;
 using EducationalPractice.Utils;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EducationalPractice.Controllers
 {
     public class OrderController
     {
-        private List<Order> orders;
+        private readonly ApplicationDbContext _context;
 
-        public OrderController()
+        public OrderController(ApplicationDbContext context)
         {
-            orders = DataInitializer.GetOrders();
+            _context = context;
         }
-
-        public List<Order> GetOrders() => orders;
 
         public string GetNextOrderNumber()
         {
-            var lastOrderNumber = orders.Select(order => order.OrderNumber).Max();
+            var lastOrderNumber = _context.Orders
+                .OrderByDescending(o => o.Id)
+                .Select(o => o.OrderNumber)
+                .FirstOrDefault();
 
             if (!string.IsNullOrEmpty(lastOrderNumber))
             {
@@ -31,48 +86,29 @@ namespace EducationalPractice.Controllers
             return "00000000/0000000";
         }
 
-        private int ParseOrderNumber(string orderNumber)
-        {
-            if (int.TryParse(orderNumber.Split('/')[0], out int numericPart))
-                return numericPart;
-            return 0;
-        }
-
-        public bool IsUniqueVesselNumber(string vesselNumber)
-        {
-            return !orders.Any(order => order.OrderNumber == vesselNumber);
-        }
-
-        public string ValidateVesselNumber(string vesselNumber)
-        {
-            if (IsUniqueVesselNumber(vesselNumber))
-            {
-                return $"Номер сосуда подтвержден: {vesselNumber}";
-            }
-            else
-            {
-                return "Этот номер уже существует. Пожалуйста, введите уникальный номер.";
-            }
-        }
-
         public string[] GetCustomerTypes()
         {
-            return [ "Юридическое лицо (ЮЛ)", "Физическое лицо (ФЛ)" ];
+            return new[] { "Юридическое лицо (ЮЛ)", "Физическое лицо (ФЛ)" };
         }
 
         public bool DoesOrderNumberExist(string orderNumber)
         {
-            return orders.Any(order => order.OrderNumber == orderNumber);
+            return _context.Orders.Any(order => order.OrderNumber == orderNumber);
         }
 
         public void AddOrder(Order order)
         {
-            orders.Add(order);
+            _context.Orders.Add(order);
+            _context.SaveChanges();
         }
 
         public int GetNextOrderId()
         {
-            return orders.Select(order => order.Id).Max() + 1;
+            return _context.Orders
+                   .AsEnumerable() // Переключаемся на обработку данных на стороне клиента
+                   .Select(order => order.Id)
+                   .DefaultIfEmpty(0) // Обработка случая, когда таблица пуста
+                   .Max() + 1;        // Получаем следующий Id
         }
     }
 }

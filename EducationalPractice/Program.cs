@@ -15,9 +15,9 @@ namespace EducationalPractice
             // see https://aka.ms/applicationconfiguration.
             var context = new ApplicationDbContext();
 
-            var orderController = new OrderController();
+            var orderController = new OrderController(context);
             var clientController = new ClientController(context);
-            var serviceController = new ServiceController();
+            var serviceController = new ServiceController(context);
 
             ApplicationConfiguration.Initialize();
             Application.Run(new OrderForm(orderController, clientController, serviceController));

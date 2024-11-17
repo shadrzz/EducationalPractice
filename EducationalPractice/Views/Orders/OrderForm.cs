@@ -139,11 +139,11 @@ namespace EducationalPractice
             clientDataLabel.Visible = false;
             clientDataTextBox.Visible = false;
             placeOrderButton.Visible = false;
+            customerChoiceComboBox.SelectedIndex = -1;
 
             if (cleanValues)
             {
                 idLaboratoryVesselTextBox.Clear();
-                customerChoiceComboBox.SelectedIndex = -1;
                 clientDataTextBox.Clear();
             }
         }
